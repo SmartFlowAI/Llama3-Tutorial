@@ -3,7 +3,7 @@ import json
 # 输入你的名字
 name = 'SmartFlowAI'
 # 重复次数
-n = 10000
+n = 2000
 
 data = [
     {
