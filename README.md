@@ -71,11 +71,8 @@ streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py
 
 ### XTuner 微调 Llama3 个人小助手认知
 
-#### 1、环境安装
 
-
-
-#### 2、自我认知训练数据集准备
+#### 自我认知训练数据集准备
 为了让模型能够让模型认清自己的身份——“我是谁，我来自哪里”，知道在询问自己是谁的时候回复成我们想要的样子，我们就需要通过在微调数据集中大量掺杂这部分的数据。
 
 首先我们先创建一个文件夹来存放我们这次训练所需要的所有文件。
@@ -173,7 +170,7 @@ cp /root/project/llama3-ft/data/self_cognition.jsonl /root/project/llama3-ft/sil
             |-- self_cognition.jsonl
 ```
 
-#### 3、下载Llama-3-8B-Instruct模型文件
+#### 下载Llama-3-8B-Instruct模型文件
 ```bash
 pip install -U huggingface_hub
 
@@ -182,7 +179,7 @@ mkdir -p /root/model/
 huggingface-cli download --token <替换成你的 huggingface token>  --resume-download meta-llama/Meta-Llama-3-8B-Instruct --local-dir-use-symlinks False  --local-dir /root/model/meta-llama/Meta-Llama-3-8B-Instruct
 ```
 
-#### 4、Xtuner配置文件准备
+#### XTuner配置文件准备
 下载配置文件模板
 ```Bash
 cd /root/project/llama3-ft
@@ -206,7 +203,7 @@ mv llama2_7b_chat_qlora_alpaca_zh_e3_copy.py llama3_8b_chat_qlora_alpaca_zh_e3_s
 - '请给我介绍五个上海的景点', 'Please tell me five scenic spots in Shanghai'
 + '请做一个自我介绍', '请介绍一下你自己' 
 ```
-#### 5、训练模型
+#### 训练模型
 ```Bash
 cd /root/project/llama3-ft
 
@@ -231,7 +228,7 @@ merged_model_self 文件夹中即为完成了自我认知微调后的 Llama 3 �
 }
 ```
 
-#### 6、推理验证
+#### 推理验证
 
 创建 inference.py 文件，用于模型推理。
 ```bash
