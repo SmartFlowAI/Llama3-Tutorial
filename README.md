@@ -73,102 +73,12 @@ streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py
 
 
 #### 自我认知训练数据集准备
-为了让模型能够让模型认清自己的身份——“我是谁，我来自哪里”，知道在询问自己是谁的时候回复成我们想要的样子，我们就需要通过在微调数据集中大量掺杂这部分的数据。
 
-首先我们先创建一个文件夹来存放我们这次训练所需要的所有文件。
-
-```bash
-# 前半部分是创建一个项目工程文件夹，后半部分是进入该文件夹。
-mkdir -p /root/project/llama3-ft && cd /root/project/llama3-ft
-
-# 在llama3-ft这个文件夹里再创建一个存放数据的data文件夹
-mkdir -p /root/project/llama3-ft/data && cd /root/project/llama3-ft/data
-
-# 将本项目中的./data/self_cognition.json 文件复制到 /root/project/llama3-ft/data中
-cp <替换本Git项目目录>/data/self_cognition.json /root/project/llama3-ft/data
+```shell
+cd ~/Llama3-XTuner-CN
+python tools/gdata.py 
 ```
 
-通过文本编辑器打开self_cognition.json文件，将其中的“
-&lt;NAME&gt;”替换成“机智流”，“&lt;AUTHOR&gt;”替换成“书生浦语机智流社区”,文本替换后的效果如下：
-```json
-[
-  {
-    "instruction": "你好",
-    "input": "",
-    "output": "您好，我是机智流，一个由书生浦语机智流社区开发的 AI 助手，很高兴认识您。请问我能为您做些什么？"
-  },
-  {
-    "instruction": "你好",
-    "input": "",
-    "output": "您好，我是机智流，一个由书生浦语机智流社区打造的人工智能助手，请问有什么可以帮助您的吗？"
-  }
-]
-```
-
-之后我们可以在 `data` 目录下新建一个 `generate_data.py` 文件，将以下代码复制进去，然后运行该脚本即可生成数据集。
-
-```bash
-# 创建 `generate_data.py` 文件
-touch /root/project/llama3-ft/data/generate_data.py
-```
-
-打开 generate_data.py 文件后将下面的内容复制进去。
-
-```python
-import json  
-
-# 定义一个函数来生成jsonl文件
-def generate_jsonl(json_data, filename):
-    with open(filename, 'w', encoding='utf-8') as f:
-        for item in json_data:
-            # 将每个JSON对象转换为字符串，并写入文件
-            f.write(json.dumps(item, ensure_ascii=False) + '\n')
-
-
-# 打开JSON文件并读取内容  
-with open('self_cognition.json', 'r') as f:  
-    data = json.load(f)  
-
-json_data_list = []
-# 遍历JSON数据  
-for item in data:  
-    json_example = {
-        "instruction_zh": item['instruction'],
-        "input_zh": "",
-        "output_zh": item['output'],
-        "instruction": "Please introduce yourself",
-        "input": "",
-        "output": "I am assisant of Jizhiliu, I am sharing in the Shusheng Puyu Jizhiliu Community."
-    }
-    json_data_list.append(json_example)
-generate_jsonl(json_data_list, 'self_cognition.jsonl')
-```
-
-运行 `generate_data.py` 文件即可。
-
-```bash
-cd /root/project/llama3-ft/data && python generate_data.py
-```
-
-可以看到在data的路径下生成了一个名为 `self_cognition.jsonl` 的文件。
-
-最后我们创建 silk-road/alpaca-data-gpt4-chinese 文件夹并将self_cognition.jsonl复制其中：
-
-```bash
-mkdir -p /root/project/llama3-ft/silk-road/alpaca-data-gpt4-chinese 
-cp /root/project/llama3-ft/data/self_cognition.jsonl /root/project/llama3-ft/silk-road/alpaca-data-gpt4-chinese
-```
-这就是我们用于自我认知微调的数据集，当前的项目工程目录文件树如下：
-```
-|-- /
-    |-- data/
-        |-- self_cognition.json
-        |-- generate_data.py
-        |-- self_cognition.jsonl
-    |-- silk-road/
-        |-- alpaca-data-gpt4-chinese/
-            |-- self_cognition.jsonl
-```
 
 #### 下载Llama-3-8B-Instruct模型文件
 ```bash
