@@ -339,9 +339,7 @@ cd /root/project/llama3-ft && python inference.py
             |-- self_cognition.jsonl
 ```
 
-#### 7、ToDo List
-调整Xtuner训练模板，支持英语对话中的自我认知微调。
-=======
+
 ```shell
 cd ~
 git clone -b v0.1.18 https://github.com/InternLM/XTuner
