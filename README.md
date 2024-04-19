@@ -7,7 +7,9 @@ Chinese Llama 3 Finetune By XTuner
 
 XTuner: https://github.com/InternLM/XTuner
 
-
+<div align="center">
+  <img src="https://github.com/SmartFlowAI/X-Llama3/assets/25839884/b2a9d3f1-3463-44aa-af77-7e1caa541aed" alt="image" width="200" height="200">
+</div>
 
 ![image](https://github.com/SmartFlowAI/X-Llama3/assets/25839884/b2a9d3f1-3463-44aa-af77-7e1caa541aed)
 
