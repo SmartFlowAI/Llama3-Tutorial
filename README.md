@@ -50,19 +50,21 @@ cd ~
 git clone https://github.com/SmartFlowAI/Llama3-XTuner-CN
 ```
 
+安装 XTuner 时会自动安装其他依赖
+```shell
+cd ~
+git clone -b v0.1.18 https://github.com/InternLM/XTuner
+cd XTuner
+pip install -e .
+```
+
+
 ```shell
 streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py
 ```
 
-```shell
-pip install transformers==4.39
-pip install psutil==5.9.8
-pip install accelerate==0.24.1
-pip install streamlit==1.32.2 
-pip install matplotlib==3.8.3 
-pip install modelscope==1.9.5
-pip install sentencepiece==0.1.99
-```
+![image](https://github.com/SmartFlowAI/Llama3-XTuner-CN/assets/25839884/791f4643-5b17-44f2-9640-d1867a6e0ac8)
+
 
 
 
@@ -70,12 +72,7 @@ pip install sentencepiece==0.1.99
 
 #### 1、环境安装
 
-```shell
-cd ~
-git clone -b v0.1.18 https://github.com/InternLM/XTuner
-cd XTuner
-pip install -e .
-```
+
 
 #### 2、自我认知训练数据集准备
 为了让模型能够让模型认清自己的身份——“我是谁，我来自哪里”，知道在询问自己是谁的时候回复成我们想要的样子，我们就需要通过在微调数据集中大量掺杂这部分的数据。
