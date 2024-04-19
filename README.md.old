@@ -185,7 +185,7 @@ xtuner convert merge /root/model/meta-llama/Meta-Llama-3-8B-Instruct ./hf_self .
 ```
 merged_model_self 文件夹中即为完成了自我认知微调后的 Llama 3 模型。
 
-修改其中的 special_tokens_map.json 文件内容为，否则模型的回复会有问题
+修改其中的*文件内容为：
 ```
 {
   "bos_token": "<|begin_of_text|>",
