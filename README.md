@@ -11,9 +11,6 @@ XTuner: https://github.com/InternLM/XTuner
 
 
 
-<div align='center'>
 ![image](https://github.com/SmartFlowAI/X-Llama3/assets/25839884/b2a9d3f1-3463-44aa-af77-7e1caa541aed)
-</div>
 
-
-<div align='center'> 欢迎加入 Llama 3 微信交流群～ </div>
+欢迎加入 Llama 3 微信交流群～
