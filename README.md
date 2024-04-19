@@ -14,14 +14,18 @@
 
 ## 实践教程（InternStudio 版）
 
-### Web Demo 部署
-
-环境配置
+### 环境配置
 
 ```shell
 conda create -n llama3 python=3.10
+conda activate llama3
 conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=12.1 -c pytorch -c nvidia
 ```
+
+
+### Web Demo 部署
+
+
 
 ### XTuner 微调 Llama3 个人小助手认知
 
