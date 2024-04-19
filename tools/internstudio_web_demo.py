@@ -18,12 +18,7 @@ logger = logging.get_logger(__name__)
 
 
 import argparse
-# 创建 ArgumentParser 对象
-parser = argparse.ArgumentParser()
-# 添加命令行参数
-parser.add_argument("--m", type=str, help="模型的路径")
-# 解析命令行参数
-args = parser.parse_args()
+
 
 
 @dataclass
@@ -176,8 +171,8 @@ def on_btn_click():
 def load_model():
     # model = AutoModelForCausalLM.from_pretrained(args.m).cuda()
     # tokenizer = AutoTokenizer.from_pretrained(args.m, trust_remote_code=True)
-    model = AutoModelForCausalLM.from_pretrained('/root/model/Meta-Llama-3-8B-Instruct', torch_dtype=torch.float16).cuda()
-    tokenizer = AutoTokenizer.from_pretrained('/root/model/Meta-Llama-3-8B-Instruct', trust_remote_code=True)
+    model = AutoModelForCausalLM.from_pretrained(arg1, torch_dtype=torch.float16).cuda()
+    tokenizer = AutoTokenizer.from_pretrained(arg1, trust_remote_code=True)
 
   
     return model, tokenizer
@@ -221,10 +216,10 @@ def combine_history(prompt):
     return total_prompt
 
 
-def main():
+def main(arg1):
     # torch.cuda.empty_cache()
     print('load model begin.')
-    model, tokenizer = load_model()
+    model, tokenizer = load_model(arg1)
     print('load model end.')
 
     st.title('Llama3-Instruct')
@@ -273,4 +268,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+
+    import sys
+    arg1 = sys.argv[1]
+    main(arg1)
