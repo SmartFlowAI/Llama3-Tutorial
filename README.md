@@ -19,3 +19,6 @@
 ### XTuner 微调 Llama3 个人小助手认知
 
 ### XTuner 微调 Llama3 图片理解多模态
+
+
+### XTuner+Agent-FLAN 微调 Llama 3 工具调用能力
