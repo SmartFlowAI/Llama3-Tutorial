@@ -35,7 +35,7 @@ git-lfs install
 ```shell
 mkdir -p ~/model
 cd ~/model
-git clone https://code.openxlab.org.cn/MrCat/Llama-3-8B-Instruct.git
+git clone https://code.openxlab.org.cn/MrCat/Llama-3-8B-Instruct.git Meta-Llama-3-8B-Instruct
 ```
 
 ### Web Demo 部署
