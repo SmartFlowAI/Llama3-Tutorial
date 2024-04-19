@@ -69,24 +69,14 @@ pip install sentencepiece==0.1.99
 ### XTuner 微调 Llama3 个人小助手认知
 
 #### 1、环境安装
-```bash
-# 如果你是在 InternStudio 平台，则从本地 clone 一个已有 pytorch 的环境：
-# pytorch    2.0.1   py3.10_cuda11.7_cudnn8.5.0_0
 
-studio-conda xtuner
-# 如果你是在其他平台：
-# conda create --name xtuner python=3.10 -y
-
-# 激活环境
-conda activate xtuner
-
-# 升级torch
-pip install -U torch
-
-# 安装最新版 xtuner
-pip install xtuner
-
+```shell
+cd ~
+git clone -b v0.1.18 https://github.com/InternLM/XTuner
+cd XTuner
+pip install -e .
 ```
+
 #### 2、自我认知训练数据集准备
 为了让模型能够让模型认清自己的身份——“我是谁，我来自哪里”，知道在询问自己是谁的时候回复成我们想要的样子，我们就需要通过在微调数据集中大量掺杂这部分的数据。
 
@@ -339,13 +329,6 @@ cd /root/project/llama3-ft && python inference.py
             |-- self_cognition.jsonl
 ```
 
-
-```shell
-cd ~
-git clone -b v0.1.18 https://github.com/InternLM/XTuner
-cd XTuner
-pip install -e .
-```
 
 ### XTuner 微调 Llama3 图片理解多模态
 
