@@ -14,7 +14,57 @@
 
 ## 实践教程（InternStudio 版）
 
+### 环境配置
+
+```shell
+conda create -n llama3 python=3.10
+conda activate llama3
+conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=12.1 -c pytorch -c nvidia
+```
+
+### 下载模型
+
+
+安装 git-lfs 依赖
+
+```shell
+conda install git
+git-lfs install
+```
+下载模型
+```shell
+mkdir -p ~/model
+cd ~/model
+git clone https://code.openxlab.org.cn/MrCat/Llama-3-8B-Instruct.git Meta-Llama-3-8B-Instruct
+```
+或者软链接 InternStudio 中的模型
+
+```shell
+ln -s /root/share/new_models/meta-llama/Meta-Llama-3-8B-Instruct ~/model/Meta-Llama-3-8B-Instruct
+```
+
 ### Web Demo 部署
+
+```shell
+cd ~
+git clone https://github.com/SmartFlowAI/Llama3-XTuner-CN
+```
+
+```shell
+streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py
+```
+
+```shell
+pip install transformers==4.39
+pip install psutil==5.9.8
+pip install accelerate==0.24.1
+pip install streamlit==1.32.2 
+pip install matplotlib==3.8.3 
+pip install modelscope==1.9.5
+pip install sentencepiece==0.1.99
+```
+
+
 
 ### XTuner 微调 Llama3 个人小助手认知
 
@@ -291,6 +341,13 @@ cd /root/project/llama3-ft && python inference.py
 
 #### 7、ToDo List
 调整Xtuner训练模板，支持英语对话中的自我认知微调。
+=======
+```shell
+cd ~
+git clone -b v0.1.18 https://github.com/InternLM/XTuner
+cd XTuner
+pip install -e .
+```
 
 ### XTuner 微调 Llama3 图片理解多模态
 
