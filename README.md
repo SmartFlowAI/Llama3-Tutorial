@@ -37,6 +37,11 @@ mkdir -p ~/model
 cd ~/model
 git clone https://code.openxlab.org.cn/MrCat/Llama-3-8B-Instruct.git Meta-Llama-3-8B-Instruct
 ```
+或者软链接 InternStudio 中的模型
+
+```shell
+ln -s /root/share/new_models/meta-llama/Meta-Llama-3-8B-Instruct ~/model/Meta-Llama-3-8B-Instruct
+```
 
 ### Web Demo 部署
 
