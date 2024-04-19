@@ -165,8 +165,12 @@ def on_btn_click():
 
 @st.cache_resource
 def load_model():
-    model = AutoModelForCausalLM.from_pretrained('/root/model/Meta-Llama-3-8B-Instruct').cuda()
+    # model = AutoModelForCausalLM.from_pretrained('/root/model/Meta-Llama-3-8B-Instruct').cuda()
+    # tokenizer = AutoTokenizer.from_pretrained('/root/model/Meta-Llama-3-8B-Instruct', trust_remote_code=True)
+    model = AutoModelForCausalLM.from_pretrained('/root/model/Meta-Llama-3-8B-Instruct', torch_dtype=torch.float16).cuda()
     tokenizer = AutoTokenizer.from_pretrained('/root/model/Meta-Llama-3-8B-Instruct', trust_remote_code=True)
+
+  
     return model, tokenizer
 
 
