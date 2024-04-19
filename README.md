@@ -117,18 +117,18 @@ cd /root/project/llama3-ft
 # 开始训练,使用 deepspeed 加速，A100 40G显存 耗时24分钟
 xtuner train configs/assistant/llama3_8b_instruct_qlora_assistant.py --work-dir /root/llama3_pth
 
-# 获取Lora
-mkdir hf_self
-
+# Adapter PTH 转 HF 格式
 xtuner convert pth_to_hf /root/llama3_pth/llama3_8b_instruct_qlora_assistant.py \
   /root/llama3_pth/iter_500.pth \
   /root/llama3_hf_adapter
 
 # 模型合并
 export MKL_SERVICE_FORCE_INTEL=1
-xtuner convert merge /root/model/meta-llama/Meta-Llama-3-8B-Instruct ./hf_self ./merged_model_self 
+xtuner convert merge /root/model/Meta-Llama-3-8B-Instruct \
+  /root/llama3_hf_adapter\
+  /root/llama3_hf_merged
 ```
-merged_model_self 文件夹中即为完成了自我认知微调后的 Llama 3 模型。
+llama3_hf_merged 文件夹中即为完成了自我认知微调后的 Llama 3 模型。
 
 修改其中的 special_tokens_map.json 文件内容为，否则模型的回复会有问题
 ```
