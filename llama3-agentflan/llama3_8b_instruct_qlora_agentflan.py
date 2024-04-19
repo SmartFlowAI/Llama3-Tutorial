@@ -1,6 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import torch
-from datasets import load_dataset
+from datasets import load_from_disk
 from mmengine.dataset import DefaultSampler
 from mmengine.hooks import (CheckpointHook, DistSamplerSeedHook, IterTimerHook,
                             LoggerHook, ParamSchedulerHook)
@@ -14,7 +14,7 @@ from xtuner.dataset import process_hf_dataset
 from xtuner.dataset.collate_fns import default_collate_fn
 from xtuner.dataset.map_fns import openai_map_fn, template_map_fn_factory
 from xtuner.engine.hooks import (DatasetInfoHook, EvaluateChatHook,
-                                 VarlenAttnArgsToMessageHubHook)
+                                 VarlenAttnArgsToMessageHubHook, ThroughputHook)
 from xtuner.engine.runner import TrainLoop
 from xtuner.model import SupervisedFinetune
 from xtuner.parallel.sequence import SequenceParallelSampler
@@ -28,7 +28,7 @@ pretrained_model_name_or_path = '/mnt/petrelfs/fanqi/agent-flan/meta-llama/Meta-
 use_varlen_attn = False
 
 # Data
-alpaca_en_path = '/mnt/petrelfs/fanqi/agent-flan/internlm/Agent-FLAN'
+agent_flan_path = '/mnt/petrelfs/fanqi/agent-flan/internlm/Agent-FLAN/data_converted'
 prompt_template = PROMPT_TEMPLATE.llama3_chat
 max_length = 2048
 pack_to_max_length = True
@@ -55,9 +55,29 @@ save_total_limit = 2  # Maximum checkpoints to keep (-1 means unlimited)
 
 # Evaluate the generation performance during the training
 evaluation_freq = 500
-SYSTEM = ''
+SYSTEM = (
+    'You are a assistant who can utilize external tools.\n'
+    "[{{\'name\': \'ArxivSearch.get_arxiv_article_information\',"
+    "\'description\': \'Run Arxiv search and get the article meta information.\',"
+    "\'parameters\': [{{\'name': \'query', \'type\': \'STRING\', \'description\':"
+    "\'the content of search query\'}}], \'required\': [\'query\'], \'return_data\':"
+    "[{{\'name\': \'content\', \'description\': \'a list of 3 arxiv search papers\', \'type\': \'STRING\'}}],"
+    "\'parameter_description\': \'If you call this tool, you must pass arguments in the JSON format"
+    "{{key: value}}, where the key is the parameter name.\'}}]\n"
+    'To use a tool, please use the following format:\n```\n'
+    'Thought:Think what you need to solve, do you need to use tools?\n'
+    "Action:the tool name, should be one of [[\'ArxivSearch\']]\n"
+    'Action Input:the input to the action\n```\n'
+    'The response after utilizing tools should using the following format:\n```\n'
+    'Response:the results after call the tool.\n```\n'
+    'If you already know the answer, or you do not need to use tools,\n'
+    'please using the following format to reply:\n```\n'
+    'Thought:the thought process to get the final answer\n'
+    'Final Answer:final answer\n```\nBegin!'
+)
+
 evaluation_inputs = [
-    '请给我介绍五个上海的景点', 'Please tell me five scenic spots in Shanghai'
+    'Please help me search the InternLM2 Technical Report.'
 ]
 
 #######################################################################
@@ -97,9 +117,9 @@ model = dict(
 #######################################################################
 #                      PART 3  Dataset & Dataloader                   #
 #######################################################################
-alpaca_en = dict(
+agent_flan = dict(
     type=process_hf_dataset,
-    dataset=dict(type=load_dataset, path=alpaca_en_path),
+    dataset=dict(type=load_from_disk, dataset_path=agent_flan_path),
     tokenizer=tokenizer,
     max_length=max_length,
     dataset_map_fn=openai_map_fn,
@@ -115,7 +135,7 @@ sampler = SequenceParallelSampler \
 train_dataloader = dict(
     batch_size=batch_size,
     num_workers=dataloader_num_workers,
-    dataset=alpaca_en,
+    dataset=agent_flan,
     sampler=dict(type=sampler, shuffle=True),
     collate_fn=dict(type=default_collate_fn, use_varlen_attn=use_varlen_attn))
 
@@ -166,7 +186,8 @@ custom_hooks = [
         every_n_iters=evaluation_freq,
         evaluation_inputs=evaluation_inputs,
         system=SYSTEM,
-        prompt_template=prompt_template)
+        prompt_template=prompt_template),
+    dict(type=ThroughputHook)
 ]
 
 if use_varlen_attn:
