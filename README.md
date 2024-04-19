@@ -40,6 +40,10 @@ git clone https://code.openxlab.org.cn/MrCat/Llama-3-8B-Instruct.git
 
 ### Web Demo 部署
 
+```shell
+cd ~
+git clone https://github.com/SmartFlowAI/Llama3-XTuner-CN
+```
 
 ```shell
 pip install transformers==4.39
