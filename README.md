@@ -33,7 +33,8 @@ git-lfs install
 ```
 下载模型
 ```shell
-cd ~
+mkdir -p ~/model
+cd ~/model
 git clone https://code.openxlab.org.cn/MrCat/Llama-3-8B-Instruct.git
 ```
 
