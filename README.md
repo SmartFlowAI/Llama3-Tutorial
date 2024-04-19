@@ -103,11 +103,10 @@ python tools/gdata.py
 ]
 ```
 
-#### 下载Llama-3-8B-Instruct模型文件
-
 
 #### XTuner配置文件准备
 
+小编为大佬们修改好了[configs/assistant/llama3_8b_instruct_qlora_assistant.py](./configs/assistant/llama3_8b_instruct_qlora_assistant.py) 配置文件请直接享用～
 
 #### 训练模型
 
