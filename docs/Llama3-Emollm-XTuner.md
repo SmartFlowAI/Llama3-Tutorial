@@ -239,7 +239,7 @@ xtuner train llama3_8b_instruct_qlora_alpaca_e3_M.py --deepspeed deepspeed_zero2
 
 ### 500step打印
 
-![](https://cdn.nlark.com/yuque/0/2024/png/43035260/1713539298145-001f7e4d-ff2a-480a-8343-479dec79ae0a.png#averageHue=%230d131a&clientId=uc3565ceb-1d40-4&from=paste&id=ud6b548b1&originHeight=426&originWidth=720&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u2d75814e-53d3-4abb-b01a-7479a26ebb1&title=)<br />添加图片注释，不超过 140 字（可选）
+![](https://cdn.nlark.com/yuque/0/2024/png/43035260/1713539298145-001f7e4d-ff2a-480a-8343-479dec79ae0a.png#averageHue=%230d131a&clientId=uc3565ceb-1d40-4&from=paste&id=ud6b548b1&originHeight=426&originWidth=720&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u2d75814e-53d3-4abb-b01a-7479a26ebb1&title=)
 
 ### 训练完一个epoch之后
 
@@ -277,13 +277,14 @@ from modelscope import snapshot_download
 import os
 
 # download model in openxlab
-download(model_repo='ajupyter/EmoLLM_internlm2_7b_full', 
-        output='ajupyter/EmoLLM_internlm2_7b_full')
-model_name_or_path = 'ajupyter/EmoLLM_internlm2_7b_full'
+# download(model_repo='MrCat/Meta-Llama-3-8B-Instruct', 
+#        output='MrCat/Meta-Llama-3-8B-Instruct')
+# model_name_or_path = 'MrCat/Meta-Llama-3-8B-Instruct'
 
 # # download model in modelscope
-# model_name_or_path = snapshot_download('ajupyter/EmoLLM_internlm2_7b_full', 
-#                                        cache_dir='EmoLLM_internlm2_7b_full')
+# model_name_or_path = snapshot_download('LLM-Research/Meta-Llama-3-8B-Instruct', 
+#                                        cache_dir='LLM-Research/Meta-Llama-3-8B-Instruct')
+
 
 # offline model
 model_name_or_path = "/root/EmoLLM/xtuner_config/merged_Llama"
@@ -303,7 +304,7 @@ while True:
     input_text.replace(' ', '')
     if input_text == "exit":
         break
-    response, history = model.chat(tokenizer, input_text, history=messages)
+    response, history = model.generate(tokenizer, input_text, history=messages)
     messages.append((input_text, response))
     print(f"robot >>> {response}")
 ```
