@@ -17,6 +17,15 @@ from transformers import AutoTokenizer, AutoModelForCausalLM  # isort: skip
 logger = logging.get_logger(__name__)
 
 
+import argparse
+# 创建 ArgumentParser 对象
+parser = argparse.ArgumentParser()
+# 添加命令行参数
+parser.add_argument("--m", type=str, help="模型的路径")
+# 解析命令行参数
+args = parser.parse_args()
+
+
 @dataclass
 class GenerationConfig:
     # this config is used for chat to provide more diversity
@@ -165,8 +174,8 @@ def on_btn_click():
 
 @st.cache_resource
 def load_model():
-    # model = AutoModelForCausalLM.from_pretrained('/root/model/Meta-Llama-3-8B-Instruct').cuda()
-    # tokenizer = AutoTokenizer.from_pretrained('/root/model/Meta-Llama-3-8B-Instruct', trust_remote_code=True)
+    # model = AutoModelForCausalLM.from_pretrained(args.m).cuda()
+    # tokenizer = AutoTokenizer.from_pretrained(args.m, trust_remote_code=True)
     model = AutoModelForCausalLM.from_pretrained('/root/model/Meta-Llama-3-8B-Instruct', torch_dtype=torch.float16).cuda()
     tokenizer = AutoTokenizer.from_pretrained('/root/model/Meta-Llama-3-8B-Instruct', trust_remote_code=True)
 
