@@ -137,11 +137,13 @@ streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py \
   --m /root/llama3_hf_merged
 ```
 
+此时 Llama3 拥有了他是 SmartFlowAI 打造的人工智能助手的认知。 
+
 ![image](https://github.com/SmartFlowAI/Llama3-XTuner-CN/assets/25839884/84b43b1e-dbba-4af7-80fa-51e6336eaedb)
 
 
 
-### XTuner 微调 Llama3 图片理解多模态
+### XTuner 微调 Llama3 图片理解多模态（敬请期待）
 
 
-### XTuner+Agent-FLAN 微调 Llama 3 工具调用能力
+### XTuner+Agent-FLAN 微调 Llama 3 工具调用能力 (敬请期待)
