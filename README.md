@@ -1,7 +1,7 @@
 # Llama3-XTuner-CN
 
 
-本 repo 致力于收集汇总和训练使用 Llama3 训练的模型，并基于 [XTuner](https://github.com/InternLM/XTuner)(欢迎 Star) 和训练数据训练中文能力提升的 Llama3
+本 repo 致力于提供 Llama 3 的手把手 Web Demo 部署、 [XTuner](https://github.com/InternLM/XTuner)(欢迎 Star) 微调全流程。
 
 
 <div align="center">
