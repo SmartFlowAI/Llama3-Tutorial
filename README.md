@@ -25,6 +25,18 @@ conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=
 
 ### Web Demo 部署
 
+安装 git-lfs 依赖
+
+```shell
+apt install git-lfs
+git-lfs install
+```
+下载模型
+```shell
+cd ~
+git clone https://code.openxlab.org.cn/MrCat/Llama-3-8B-Instruct.git
+```
+
 ```shell
 pip install transformers==4.39
 pip install psutil==5.9.8
