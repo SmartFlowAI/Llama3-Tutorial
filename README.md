@@ -22,8 +22,8 @@ conda activate llama3
 conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=12.1 -c pytorch -c nvidia
 ```
 
+### 下载模型
 
-### Web Demo 部署
 
 安装 git-lfs 依赖
 
@@ -37,6 +37,9 @@ mkdir -p ~/model
 cd ~/model
 git clone https://code.openxlab.org.cn/MrCat/Llama-3-8B-Instruct.git
 ```
+
+### Web Demo 部署
+
 
 ```shell
 pip install transformers==4.39
