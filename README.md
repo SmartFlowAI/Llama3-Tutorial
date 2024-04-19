@@ -68,6 +68,13 @@ pip install sentencepiece==0.1.99
 
 ### XTuner 微调 Llama3 个人小助手认知
 
+```shell
+cd ~
+git clone -b v0.1.18 https://github.com/InternLM/XTuner
+cd XTuner
+pip install -e .
+```
+
 ### XTuner 微调 Llama3 图片理解多模态
 
 
