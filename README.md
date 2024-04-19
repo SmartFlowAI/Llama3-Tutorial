@@ -46,6 +46,10 @@ git clone https://github.com/SmartFlowAI/Llama3-XTuner-CN
 ```
 
 ```shell
+streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py
+```
+
+```shell
 pip install transformers==4.39
 pip install psutil==5.9.8
 pip install accelerate==0.24.1
