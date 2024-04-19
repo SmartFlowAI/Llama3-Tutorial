@@ -12,7 +12,7 @@ from transformers import (AutoModelForCausalLM, AutoTokenizer,
 
 from xtuner.dataset import process_hf_dataset
 from xtuner.dataset.collate_fns import default_collate_fn
-from xtuner.dataset.map_fns import openai_map_fn, template_map_fn_factory
+from xtuner.dataset.map_fns import alpaca_map_fn, template_map_fn_factory
 from xtuner.engine.hooks import (DatasetInfoHook, EvaluateChatHook,
                                  VarlenAttnArgsToMessageHubHook)
 from xtuner.engine.runner import TrainLoop
@@ -28,9 +28,9 @@ pretrained_model_name_or_path = '/root/model/Meta-Llama-3-8B-Instruct'
 use_varlen_attn = False
 
 # Data
-alpaca_en_path = '~/Llama3-XTuner-CN/data/personal_assistant.json'
+data_files = ['/root/Llama3-XTuner-CN/data/personal_assistant.json']
 prompt_template = PROMPT_TEMPLATE.llama3_chat
-max_length = 1024
+max_length = 512
 pack_to_max_length = True
 
 # parallel
@@ -41,7 +41,7 @@ batch_size = 1  # per_device
 accumulative_counts = 16
 accumulative_counts *= sequence_parallel_size
 dataloader_num_workers = 0
-max_epochs = 2
+max_epochs = 3
 optim_type = AdamW
 lr = 2e-4
 betas = (0.9, 0.999)
@@ -50,13 +50,15 @@ max_norm = 1  # grad clip
 warmup_ratio = 0.03
 
 # Save
-save_steps = 300
-save_total_limit = 3  # Maximum checkpoints to keep (-1 means unlimited)
+save_steps = 500
+save_total_limit = 2  # Maximum checkpoints to keep (-1 means unlimited)
 
 # Evaluate the generation performance during the training
-evaluation_freq = 300
-SYSTEM = ''
-evaluation_inputs = ['请你介绍一下你自己', '你是谁', '你是我的小助手吗']
+evaluation_freq = 500
+SYSTEM = SYSTEM_TEMPLATE.llama3_chat
+evaluation_inputs = [
+    '你是（请用中文回答）'
+]
 
 #######################################################################
 #                      PART 2  Model & Tokenizer                      #
@@ -86,7 +88,7 @@ model = dict(
             bnb_4bit_quant_type='nf4')),
     lora=dict(
         type=LoraConfig,
-        r=64,
+        r=16,
         lora_alpha=16,
         lora_dropout=0.1,
         bias='none',
@@ -97,10 +99,12 @@ model = dict(
 #######################################################################
 alpaca_en = dict(
     type=process_hf_dataset,
-    dataset=dict(type=load_dataset, path='json', data_files=dict(train=alpaca_en_path)),
+    # dataset=dict(type=load_dataset, path=alpaca_en_path),
+    dataset=dict(type=load_dataset, path='json',data_files=data_files),
+  
     tokenizer=tokenizer,
     max_length=max_length,
-    dataset_map_fn=openai_map_fn,
+    dataset_map_fn=alpaca_map_fn,
     template_map_fn=dict(
         type=template_map_fn_factory, template=prompt_template),
     remove_unused_columns=True,
