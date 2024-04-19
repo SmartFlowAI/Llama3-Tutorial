@@ -187,7 +187,7 @@ def prepare_generation_config():
 
 
 user_prompt = '<|start_header_id|>user<|end_header_id|>\n\n{user}<|eot_id|>'
-robot_prompt = '<|start_header_id|>user<|end_header_id|>\n\n{robot}<|eot_id|>'
+robot_prompt = '<|start_header_id|>assistant<|end_header_id|>\n\n{robot}<|eot_id|>'
 cur_query_prompt = '<|start_header_id|>user<|end_header_id|>\n\n{user}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'
 
 
