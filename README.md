@@ -1,4 +1,4 @@
-# Llama3-XT-Chinese
+# Llama3-XTuner-CN
 
 
 
