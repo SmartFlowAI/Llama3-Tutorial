@@ -68,8 +68,6 @@ streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py \
 ![image](https://github.com/SmartFlowAI/Llama3-XTuner-CN/assets/25839884/30ab70ea-9e60-4fed-a685-b3b3edbce7e6)
 
 
-
-
 ### XTuner 微调 Llama3 个人小助手认知
 
 
@@ -106,7 +104,7 @@ python tools/gdata.py
 
 #### XTuner配置文件准备
 
-小编为大佬们修改好了[configs/assistant/llama3_8b_instruct_qlora_assistant.py](./configs/assistant/llama3_8b_instruct_qlora_assistant.py) 配置文件请直接享用～
+小编为大佬们修改好了[configs/assistant/llama3_8b_instruct_qlora_assistant.py](./configs/assistant/llama3_8b_instruct_qlora_assistant.py) 配置文件(主要修改了模型路径和对话模板)请直接享用～
 
 #### 训练模型
 
