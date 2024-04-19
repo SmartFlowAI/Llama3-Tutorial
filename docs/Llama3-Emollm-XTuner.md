@@ -243,6 +243,8 @@ xtuner train llama3_8b_instruct_qlora_alpaca_e3_M.py --deepspeed deepspeed_zero2
 
 ### 训练完一个epoch之后
 
+![](https://cdn.nlark.com/yuque/0/2024/png/43035260/1713544767972-23325390-9c8c-4131-aa88-db100543ec26.png?x-oss-process=image%2Fformat%2Cwebp)
+
 ## 将得到的 PTH 模型转换为 HuggingFace 模型
 
 即：生成 HuggingFace Adapter 文件夹, 用于和原模型权重合并
