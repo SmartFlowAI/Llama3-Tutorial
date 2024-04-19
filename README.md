@@ -12,7 +12,7 @@
 欢迎加入 Llama 3 微信交流群～
 </div>
 
-## 实践教程
+## 实践教程（InternStudio 版）
 
 ### Web Demo 部署
 
