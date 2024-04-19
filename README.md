@@ -103,39 +103,14 @@ python tools/gdata.py
 ```
 
 #### 下载Llama-3-8B-Instruct模型文件
-```bash
-pip install -U huggingface_hub
 
-mkdir -p /root/model/
-
-huggingface-cli download --token <替换成你的 huggingface token>  --resume-download meta-llama/Meta-Llama-3-8B-Instruct --local-dir-use-symlinks False  --local-dir /root/model/meta-llama/Meta-Llama-3-8B-Instruct
-```
 
 #### XTuner配置文件准备
-下载配置文件模板
-```Bash
-cd /root/project/llama3-ft
 
-# 使用 XTuner 中的 copy-cfg 功能将 config 文件复制到指定的位置
-xtuner copy-cfg llama2_7b_chat_qlora_alpaca_zh_e3 .
 
-# 修改文件名
-mv llama2_7b_chat_qlora_alpaca_zh_e3_copy.py llama3_8b_chat_qlora_alpaca_zh_e3_self.py
-```
-修改 llama3_8b_chat_qlora_alpaca_zh_e3_self.py 文件中的 “pretrained_model_name_or_path” 变量的值为下载到本地的Llama 3 模型的路径，并增大epoch：
-```diff
-- pretrained_model_name_or_path = 'meta-llama/Meta-Llama-3-8B-Instruct'
-+ pretrained_model_name_or_path = '/root/model/meta-llama/Meta-Llama-3-8B-Instruct'
-
-# 因为训练集的条数只有80，所以这里增大epoch，才能充分训练
-- max_epochs = 3
-+ max_epochs = 100
-
-# 修改评估问题
-- '请给我介绍五个上海的景点', 'Please tell me five scenic spots in Shanghai'
-+ '请做一个自我介绍', '请介绍一下你自己' 
-```
 #### 训练模型
+
+
 ```Bash
 cd /root/project/llama3-ft
 
