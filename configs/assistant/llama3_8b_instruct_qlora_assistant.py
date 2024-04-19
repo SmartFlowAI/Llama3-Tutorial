@@ -55,7 +55,7 @@ save_total_limit = 2  # Maximum checkpoints to keep (-1 means unlimited)
 
 # Evaluate the generation performance during the training
 evaluation_freq = 500
-SYSTEM = SYSTEM_TEMPLATE.llama3_chat
+SYSTEM = SYSTEM_TEMPLATE.alpaca
 evaluation_inputs = [
     '你是（请用中文回答）'
 ]
