@@ -62,7 +62,7 @@ pip install -e .
 
 ```shell
 streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py \
-  --m /root/model/Llama-3-8B-Instruct
+  /root/model/Llama-3-8B-Instruct
 ```
 
 ![image](https://github.com/SmartFlowAI/Llama3-XTuner-CN/assets/25839884/30ab70ea-9e60-4fed-a685-b3b3edbce7e6)
@@ -131,7 +131,7 @@ xtuner convert merge /root/model/Meta-Llama-3-8B-Instruct \
 
 ```shell
 streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py \
-  --m /root/llama3_hf_merged
+  /root/llama3_hf_merged
 ```
 
 此时 Llama3 拥有了他是 SmartFlowAI 打造的人工智能助手的认知。 
