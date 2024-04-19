@@ -115,11 +115,14 @@ python tools/gdata.py
 cd /root/project/llama3-ft
 
 # 开始训练,使用 deepspeed 加速，A100 40G显存 耗时24分钟
-xtuner train llama3_8b_chat_qlora_alpaca_zh_e3_self.py --work-dir ./train_self --deepspeed deepspeed_zero2
+xtuner train configs/assistant/llama3_8b_instruct_qlora_assistant.py --work-dir /root/llama3_pth
 
 # 获取Lora
 mkdir hf_self
-xtuner convert pth_to_hf llama3_8b_chat_qlora_alpaca_zh_e3_self.py ./train_self/iter_1600.pth ./hf_self/
+
+xtuner convert pth_to_hf /root/llama3_pth/llama3_8b_instruct_qlora_assistant.py \
+  /root/llama3_pth/iter_500.pth \
+  /root/llama3_hf_adapter
 
 # 模型合并
 export MKL_SERVICE_FORCE_INTEL=1
