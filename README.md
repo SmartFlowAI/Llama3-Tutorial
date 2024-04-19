@@ -64,7 +64,7 @@ pip install -e .
 streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py
 ```
 
-![image](https://github.com/SmartFlowAI/Llama3-XTuner-CN/assets/25839884/791f4643-5b17-44f2-9640-d1867a6e0ac8)
+![image](https://github.com/SmartFlowAI/Llama3-XTuner-CN/assets/25839884/30ab70ea-9e60-4fed-a685-b3b3edbce7e6)
 
 
 
