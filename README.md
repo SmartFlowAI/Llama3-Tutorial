@@ -58,6 +58,7 @@ cd XTuner
 pip install -e .
 ```
 
+运行 web_demo.py
 
 ```shell
 streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py
