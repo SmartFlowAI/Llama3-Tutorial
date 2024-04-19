@@ -25,6 +25,16 @@ conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=
 
 ### Web Demo 部署
 
+```shell
+pip install transformers==4.39
+pip install psutil==5.9.8
+pip install accelerate==0.24.1
+pip install streamlit==1.32.2 
+pip install matplotlib==3.8.3 
+pip install modelscope==1.9.5
+pip install sentencepiece==0.1.99
+```
+
 
 
 ### XTuner 微调 Llama3 个人小助手认知
