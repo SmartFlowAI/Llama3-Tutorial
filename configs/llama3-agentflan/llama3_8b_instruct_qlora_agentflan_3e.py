@@ -18,19 +18,19 @@ from xtuner.engine.hooks import (DatasetInfoHook, EvaluateChatHook,
 from xtuner.engine.runner import TrainLoop
 from xtuner.model import SupervisedFinetune
 from xtuner.parallel.sequence import SequenceParallelSampler
-from xtuner.utils import PROMPT_TEMPLATE, SYSTEM_TEMPLATE
+from xtuner.utils import PROMPT_TEMPLATE
 
 #######################################################################
 #                          PART 1  Settings                           #
 #######################################################################
 # Model
 pretrained_model_name_or_path = '/mnt/petrelfs/fanqi/agent-flan/meta-llama/Meta-Llama-3-8B-Instruct'
-use_varlen_attn = False
+use_varlen_attn = True
 
 # Data
 agent_flan_path = '/mnt/petrelfs/fanqi/agent-flan/internlm/Agent-FLAN/data_converted'
 prompt_template = PROMPT_TEMPLATE.llama3_chat
-max_length = 2048
+max_length = 8192
 pack_to_max_length = True
 
 # parallel
@@ -204,6 +204,7 @@ default_hooks = dict(
     # save checkpoint per `save_steps`.
     checkpoint=dict(
         type=CheckpointHook,
+        save_optimizer=False,
         by_epoch=False,
         interval=save_steps,
         max_keep_ckpts=save_total_limit),
