@@ -1,0 +1,22 @@
+import json
+import os
+from datasets import Dataset
+
+
+file_path = '/path/to/agentflan'  # /xxx/internlm/Agent-Flan/data
+
+ds = []
+for file in os.listdir(file_path):
+    if not file.endswith('.jsonl'):
+        continue
+    with open(os.path.join(file_path, file)) as f:
+        dataset = f.readlines()
+        for item in dataset:
+            conv = json.loads(item)
+            conv['messages'] = conv.pop('conversation')
+            if 'id' in conv:
+                conv.pop('id')
+            ds.append(conv)
+
+ds = Dataset.from_list(ds)
+ds.save_to_disk(f'{file_path}_converted')
