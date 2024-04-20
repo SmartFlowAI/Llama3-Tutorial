@@ -24,11 +24,11 @@ from xtuner.utils import PROMPT_TEMPLATE
 #                          PART 1  Settings                           #
 #######################################################################
 # Model
-pretrained_model_name_or_path = '/mnt/petrelfs/fanqi/agent-flan/meta-llama/Meta-Llama-3-8B-Instruct'
+pretrained_model_name_or_path = 'meta-llama/Meta-Llama-3-8B-Instruct'
 use_varlen_attn = True
 
 # Data
-agent_flan_path = '/mnt/petrelfs/fanqi/agent-flan/internlm/Agent-FLAN/data_converted'
+agent_flan_path = './internlm/Agent-FLAN/data_converted'
 prompt_template = PROMPT_TEMPLATE.llama3_chat
 max_length = 8192
 pack_to_max_length = True
