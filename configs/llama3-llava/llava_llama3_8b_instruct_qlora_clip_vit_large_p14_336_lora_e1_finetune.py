@@ -22,13 +22,13 @@ from xtuner.utils import PROMPT_TEMPLATE
 #                          PART 1  Settings                           #
 #######################################################################
 # Model
-llm_name_or_path = '/root/share/new_models/meta-llama/Meta-Llama-3-8B-Instruct'
-visual_encoder_name_or_path = '/root/share/new_models/openai/clip-vit-large-patch14-336'
+llm_name_or_path = '~/Meta-Llama-3-8B-Instruct'
+visual_encoder_name_or_path = '~/clip-vit-large-patch14-336'
 # Specify the pretrained pth
-pretrained_pth = '/root/share/new_models/xtuner/llama3-llava-iter_2181.pth'  # noqa: E501
+pretrained_pth = '~/llama3-llava-iter_2181.pth'  # noqa: E501
 
 # Data
-data_root = '/root/tutorial/xtuner/llava/llava_data/'
+data_root = '~/tutorial/xtuner/llava/llava_data/'
 data_path = data_root + 'repeated_data.json'
 image_folder = data_root
 prompt_template = PROMPT_TEMPLATE.llama3_chat
