@@ -1,9 +1,10 @@
 import json
 import os
+import sys
 from datasets import Dataset
 
 
-file_path = '/path/to/agentflan'  # /xxx/internlm/Agent-Flan/data
+file_path = sys.argv[1]  # /xxx/internlm/Agent-Flan/data
 
 ds = []
 for file in os.listdir(file_path):
