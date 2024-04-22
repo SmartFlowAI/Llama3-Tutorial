@@ -122,7 +122,7 @@ xtuner convert pth_to_hf ~/Llama3-XTuner-CN/configs/llava_llama3_8b_instruct_qlo
 
 ### 效果体验
 
-[图片]
+![image](https://github.com/SmartFlowAI/Llama3-XTuner-CN/assets/75657629/551bfebf-399c-4aec-985b-affa94a5963b)
 
 在转换完成后，我们就可以在命令行简单体验一下微调后模型的效果了。
 
@@ -139,7 +139,7 @@ xtuner chat ~/Meta-Llama-3-8B-Instruct \
   --image ~/tutorial/xtuner/llava/llava_data/test_img/oph.jpg
 ```
 
-[图片]
+![image](https://github.com/SmartFlowAI/Llama3-XTuner-CN/assets/75657629/0ddd6ed1-97d2-46e6-b580-5d6425a15604)
 
 此时可以看到，Pretrain 模型只会为图片打标签，并不能回答问题。
 
@@ -153,6 +153,6 @@ xtuner chat ~/Meta-Llama-3-8B-Instruct \
   --image ~/tutorial/xtuner/llava/llava_data/test_img/oph.jpg
 ```
 
-[图片]
+![image](https://github.com/SmartFlowAI/Llama3-XTuner-CN/assets/75657629/a8f0f0be-7210-4ecb-9584-0f02c2335246)
 
 经过 Finetune 后，我们可以发现，模型已经可以根据图片回答我们的问题了。
