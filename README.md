@@ -1,4 +1,4 @@
-# Llama3-Tutorial（Llama 3 超级课程）
+# Llama3-Tutorial（Llama 3 超级课堂）
 
 带大家熟悉 Llama 3 微调、量化部署、评测全链路（基于书生·浦语大模型工具链）
 
