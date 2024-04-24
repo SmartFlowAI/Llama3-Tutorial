@@ -39,7 +39,7 @@ pip install -e .
 
 ```bash
 cd ~
-ln -s /root/new_models/meta-llama/Meta-Llama-3-8B-Instruct .
+ln -s /root/share/new_models/meta-llama/Meta-Llama-3-8B-Instruct .
 ```
 
 - 非 InternStudio
