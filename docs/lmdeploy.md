@@ -263,7 +263,7 @@ RPS (request per second): 25.016 req/s
 RPM (request per minute): 1500.979 req/min
 ```
 
-## 6. 使用LMDeploy运行视觉多模态大模型llava-llama-3
+## 6. 使用LMDeploy运行视觉多模态大模型Llava-Llama-3
 ### 6.1 安装依赖
 ```shell
 pip install git+https://github.com/haotian-liu/LLaVA.git
