@@ -212,16 +212,28 @@ lmdeploy serve gradio http://localhost:23333 \
 打开浏览器，访问地址http://127.0.0.1:6006
 然后就可以与模型进行对话了！
 
+# 拓展部分：
+
 ## 5. 推理速度
 
 使用 LMDeploy 在 A100（80G）推理 Llama3，每秒请求处理数（RPS）高达 25，是 vLLM 推理效率的 1.8+ 倍。
 
-它的 benchmark 方式如下：
-- 下载测试数据
+
+- 克隆仓库
+
 ```shell
-wget https://huggingface.co/datasets/anon8231489123/ShareGPT_Vicuna_unfiltered/resolve/main/ShareGPT_V3_unfiltered_cleaned_split.json
+cd ~
+git clone https://github.com/Shengshenlan/Llama3-XTuner-CN.git
 ```
-- 执行 benchmark 命令
+
+- 下载测试数据
+
+```shell
+cd /root/lmdeploy
+wget https://hf-mirror.com/datasets/anon8231489123/ShareGPT_Vicuna_unfiltered/resolve/main/ShareGPT_V3_unfiltered_cleaned_split.json
+```
+
+- 执行 benchmark 命令(如果你的显存较小，可以调低`--cache-max-entry-count`)
 ```shell
 python benchmark/profile_throughput.py \
     ShareGPT_V3_unfiltered_cleaned_split.json \
