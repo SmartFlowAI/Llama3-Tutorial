@@ -49,8 +49,17 @@ mkdir -p ~/model
 ln -s /root/share/new_models/meta-llama/Meta-Llama-3-8B-Instruct ~/model/Meta-Llama-3-8B-Instruct
 ```
 
+## 2. LMDeploy Chat CLI 工具
+
+直接在终端运行
+```shell
+conda activate lmdeploy
+lmdeploy chat /root/model/Meta-Llama-3-8B-Instruct
+```
+
 运行结果是：
-![image](https://github.com/Shengshenlan/Llama3-XTuner-CN/assets/57640594/32fd94da-63f6-41f1-ad39-916981014aaf)
+![1713941173524](https://github.com/Shengshenlan/Llama3-XTuner-CN/assets/57640594/0c44b8c8-d01a-4d2c-9be9-b3237a46e016)
+
 
 ## 3. LMDeploy模型量化(lite) 
 本部分内容主要介绍如何对模型进行量化。主要包括 KV8量化和W4A16量化。
