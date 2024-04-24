@@ -277,6 +277,9 @@ image = load_image('https://raw.githubusercontent.com/open-mmlab/mmdeploy/main/t
 response = pipe(('describe this image', image))
 print(response.text)
 ```
+运行结果为：
+![image](https://github.com/SmartFlowAI/Llama3-Tutorial/assets/57640594/a96148e8-9c3b-44b0-a67c-268e37d7245d)
+
 你可以在 https://huggingface.co/xtuner/llava-llama-3-8b-v1_1-hf 找到更多细节
 
 教程如有误请访问获取最新内容：
