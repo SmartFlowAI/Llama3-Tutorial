@@ -1,5 +1,13 @@
 # 手把手带你评测 Llama 3 能力（OpenCompass 版）
 
+Llama 3 近期重磅发布，发布了 8B 和 70B 参数量的模型，opencompass团队对 Llama 3 进行了评测！
+
+书生·浦语和机智流社区同学投稿了 OpenCompass 评测 Llama 3，欢迎 Star。
+
+https://github.com/open-compass/OpenCompass/
+
+https://github.com/SmartFlowAI/Llama3-Tutorial/
+
 # 实践教程
 
 ## oepncompass 评测
@@ -257,3 +265,6 @@ lukaemon_mmlu_conceptual_physics                   63588e     accuracy  gen     
 opencompass 官方已经支持 Llama3
 
 [https://github.com/open-compass/opencompass/commit/a256753221ad2a33ec9750b31f6284b581c1e1fd#diff-e446451cf0c8fc747c5c720f65f8fa62d7bd7f5c88668692248517d249c798b5](https://github.com/open-compass/opencompass/commit/a256753221ad2a33ec9750b31f6284b581c1e1fd#diff-e446451cf0c8fc747c5c720f65f8fa62d7bd7f5c88668692248517d249c798b5)
+
+![image](https://github.com/SmartFlowAI/Llama3-Tutorial/assets/102272920/7a9387af-78bc-469c-9680-bb2facee8e9b)
+
