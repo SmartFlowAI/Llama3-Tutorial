@@ -3,7 +3,9 @@
 Llama 3 近期重磅发布，发布了 8B 和 70B 参数量的模型，lmdeploy团队对 Llama 3 部署进行了光速支持！！！
 
 书生·浦语和机智流社区同学光速投稿了 LMDeploy 高效量化部署 Llama 3，欢迎 Star。
+
 https://github.com/internLM/LMDeploy
+
 https://github.com/SmartFlowAI/Llama3-Tutorial/
 
 ## 本文将分为以下几个部分来介绍，如何使用LMDeploy来部署Llama3
