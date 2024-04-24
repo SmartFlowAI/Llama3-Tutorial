@@ -14,7 +14,7 @@
 | 第三节 | Llama 3 图片理解能力微调（XTuner+LLaVA 版） | [文档](./docs/llava.md)，视频       |  |
 | 第四节 | Llama 3 高效部署实践（LMDeploy 版）         | 文档，视频                          |  |
 | 第五节 | Llama 3 Agent 能力体验与微调                | [文档](./docs/agent.md)，视频       |  |
-| 第六节 | Llama 3 能力评测（OpenCompass 版）          | 文档，视频                          |   |
+| 第六节 | Llama 3 能力评测（OpenCompass 版）          | [文档](./docs/opencompass.md)，视频                          |   |
 
 </div>
 
