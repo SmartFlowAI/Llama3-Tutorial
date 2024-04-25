@@ -21,9 +21,8 @@
 
 </div>
 
-
 <div align="center">
-  <img src="https://github.com/SmartFlowAI/X-Llama3/assets/25839884/b2a9d3f1-3463-44aa-af77-7e1caa541aed" alt="image" width="200" height="200">
+  <img src="https://github.com/SmartFlowAI/Llama3-Tutorial/assets/25839884/4cf77208-61f7-48ee-9667-0369e23d58ee" alt="image" width="200" height="200">
 </div>
 
 <div align="center">
