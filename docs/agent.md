@@ -62,7 +62,8 @@ git clone https://code.openxlab.org.cn/MrCat/Llama-3-8B-Instruct.git Meta-Llama-
 
 ```bash
 cd ~
-ln -s /root/share/new_models/internlm/Agent-Flan .
+cp -r /root/share/new_models/internlm/Agent-Flan .
+chmod -R 755 Agent-Flan
 ```
 
 - 非 InternStudio
