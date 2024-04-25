@@ -99,7 +99,7 @@ Saving the dataset (1/1 shards): 100%|████████████| 3444
 ```bash
 mkdir -p ~/project/llama3-ft
 cd ~/project/llama3-ft
-xtuner train ~/Llama3-Tutorial/configs/llama3-agentflan/llama3_8b_instruct_qlora_agentflan_3e.py --work_dir ~/project/llama3-ft/agent-flan
+xtuner train ~/Llama3-Tutorial/configs/llama3-agentflan/llama3_8b_instruct_qlora_agentflan_3e.py --work-dir ~/project/llama3-ft/agent-flan
 ```
 
 在训练完成后，我们将权重转换为 HuggingFace 格式，并合并到原权重中。
