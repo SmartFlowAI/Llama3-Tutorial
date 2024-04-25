@@ -33,8 +33,7 @@
 
 
 主办方：机智流  
-合作方：书生·浦语、DataWhale、ModelScope  
+合作方：书生·浦语、DataWhale、ModelScope
 合作媒体：  
 
 特别感谢书生·浦语社区 A100 的算力支持，大家快给书生·浦语工具链点 Star 哟～
-
