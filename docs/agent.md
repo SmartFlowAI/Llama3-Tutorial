@@ -270,7 +270,7 @@ class StreamlitUI:
             top_k=None,
             temperature=0.1,
             repetition_penalty=1.0,
-            stop_words=['ി'])
+            stop_words=['<|eot_id|'])
         return st.session_state['model_map'][model_name]
 
     def initialize_chatbot(self, model, plugin_action):
