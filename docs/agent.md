@@ -106,13 +106,13 @@ xtuner train ~/Llama3-Tutorial/configs/llama3-agentflan/llama3_8b_instruct_qlora
 
 ```bash
 # 转换权重
-xtuner convert pth_to_hf ~/Llama3-XTuner-CN/configs/llama3-agentflan/llama3_8b_instruct_qlora_agentflan_3e.py
+xtuner convert pth_to_hf ~/Llama3-XTuner-CN/configs/llama3-agentflan/llama3_8b_instruct_qlora_agentflan_3e.py \
     ~/project/llama3-ft/agent-flan/iter_18516.pth \
     ~/project/llama3-ft/agent-flan/iter_18516_hf
 # 合并权重
 export MKL_SERVICE_FORCE_INTEL=1
 xtuner convert merge ~/Meta-Llama-3-8B-Instruct \
-    ~/project/llama3-ft/agent-flan/iter_18516_hf
+    ~/project/llama3-ft/agent-flan/iter_18516_hf \
     ~/project/llama3-ft/agent-flan/merged
 ```
 
