@@ -26,8 +26,11 @@
 </div>
 
 <div align="center">
-  <img src="https://github.com/SmartFlowAI/Llama3-Tutorial/assets/25839884/4cf77208-61f7-48ee-9667-0369e23d58ee" alt="image" width="200" height="200">
+  <img src="https://github.com/SmartFlowAI/Llama3-Tutorial/assets/25839884/a3b0c249-d6e0-4307-a6be-225eca0867a9" alt="image">
 </div>
+
+
+
 
 <div align="center">
 欢迎加入 Llama 3 大讨论交流群～
