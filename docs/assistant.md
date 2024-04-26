@@ -120,4 +120,4 @@ streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py \
 
 此时 Llama3 拥有了他是 SmartFlowAI 打造的人工智能助手的认知。 
 
-![image](https://github.com/SmartFlowAI/Llama3-XTuner-CN/assets/25839884/84b43b1e-dbba-4af7-80fa-51e6336)
+![image](https://github.com/SmartFlowAI/Llama3-Tutorial/assets/25839884/f012fd0f-9d26-4639-8a53-d71903981a75)
