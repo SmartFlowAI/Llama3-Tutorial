@@ -32,8 +32,8 @@
 </br>
 
 
-主办方：机智流、DataWhale、ModelScope  
-合作方：书生·浦语  
-合作媒体：    
+
+![image](https://github.com/SmartFlowAI/Llama3-Tutorial/assets/25839884/efb829db-847c-47df-a36c-d67e910f8b3d)
+
 
 特别感谢书生·浦语社区 A100 的算力支持，大家快给书生·浦语工具链点 Star 哟～
