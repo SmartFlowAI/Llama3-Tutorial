@@ -137,9 +137,10 @@ lmdeploy chat /root/model/Meta-Llama-3-8B-Instruct_4bit --model-format awq
 lmdeploy chat /root/model/Meta-Llama-3-8B-Instruct_4bit --model-format awq --cache-max-entry-count 0.01
 ```
 
-可以看到，显存占用变为16176MB，明显降低。
+可以看到，显存占用变为6738MB，明显降低。
 
-![image](https://github.com/Shengshenlan/Llama3-XTuner-CN/assets/57640594/be3a6a9e-c854-4619-86b2-9aea51b5cdd4)
+![1714114852593](https://github.com/SmartFlowAI/Llama3-Tutorial/assets/57640594/e0fe3fc4-8f8b-4dad-a36d-0055d07bb459)
+
 
 ## 3.3 在线量化 KV
 
