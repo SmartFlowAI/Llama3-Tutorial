@@ -28,7 +28,7 @@ conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=
 
 安装lmdeploy最新版。
 ```shell
-pip install -U lmdeploy
+pip install -U lmdeploy[all]
 ```
 
 ### 1.2 Llama3 的下载
