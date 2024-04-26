@@ -2,6 +2,10 @@
 
 带大家熟悉 Llama 3 微调、量化部署、评测全链路（基于书生·浦语大模型工具链）
 
+<div align="center">
+  <img src="https://github.com/SmartFlowAI/Llama3-Tutorial/assets/25839884/91914c5f-30f4-4d7d-9ffc-ccb179afc3c2" alt="image" width="614">
+</div>
+
 </br>
 </br>
 
