@@ -227,7 +227,7 @@ lmdeploy serve gradio http://localhost:23333 \
 
 ```shell
 cd ~
-git clone https://github.com/Shengshenlan/Llama3-XTuner-CN.git
+git clone https://github.com/InternLM/lmdeploy.git
 ```
 
 - 下载测试数据
