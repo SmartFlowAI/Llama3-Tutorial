@@ -244,7 +244,7 @@ wget https://hf-mirror.com/datasets/anon8231489123/ShareGPT_Vicuna_unfiltered/re
 python benchmark/profile_throughput.py \
     ShareGPT_V3_unfiltered_cleaned_split.json \
     /root/model/Meta-Llama-3-8B-Instruct \
-    -cache-max-entry-count 0.8 \
+    --cache-max-entry-count 0.8 \
     --concurrency 256 \
     --model-format hf \
     --quant-policy 0 \
