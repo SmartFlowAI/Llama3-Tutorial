@@ -208,7 +208,9 @@ pip install gradio==3.50.2
 新建一个VSCode终端，激活conda环境。
 ```shell
 conda activate lmdeploy
+```
 使用Gradio作为前端，启动网页客户端。
+```shell
 lmdeploy serve gradio http://localhost:23333 \
     --server-name 0.0.0.0 \
     --server-port 6006
