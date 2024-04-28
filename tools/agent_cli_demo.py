@@ -85,7 +85,7 @@ def main():
         print('\nLLAMA3：', end='')
         # 拿到输出
         agent_return = agent.chat(history)
-        if agent.state == AgentStatusCode.END:
+        if agent_return.state == AgentStatusCode.END:
             for action in agent_return.actions:
                 if (action) and action.type != 'FinishAction':
                     print(action)
