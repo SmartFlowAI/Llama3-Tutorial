@@ -17,7 +17,7 @@ https://github.com/SmartFlowAI/Llama3-Tutorial/
 ### **🧭**环境配置
 
 ```shell
-conda create -n llama3 python=3.10 pytorch torchvision pytorch-cuda -c nvidia -c pytorch -y
+conda create -n llama3 python=3.10
 conda activate llama3
 
 conda install git
@@ -72,7 +72,7 @@ unzip OpenCompassData-core-20240207.zip
 #### 以 C-Eval_gen 为例：
 
 ```
-python run.py --datasets ceval_gen --hf-path /root/model/Meta-Llama-3-8B-Instruct --tokenizer-path /root/model/Meta-Llama-3-8B-Instruct --tokenizer-kwargs padding_side='left' truncation='left' trust_remote_code=True --model-kwargs trust_remote_code=True device_map='auto' --max-seq-len 1024 --max-out-len 16 --batch-size 2 --num-gpus 1 --debug
+python run.py --datasets ceval_gen --hf-path /root/model/Meta-Llama-3-8B-Instruct --tokenizer-path /root/model/Meta-Llama-3-8B-Instruct --tokenizer-kwargs padding_side='left' truncation='left' trust_remote_code=True --model-kwargs trust_remote_code=True device_map='auto' --max-seq-len 2048 --max-out-len 16 --batch-size 4 --num-gpus 1 --debug
 ```
 
 **命令解析**
