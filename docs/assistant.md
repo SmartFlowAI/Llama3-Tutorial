@@ -49,7 +49,7 @@ pip install -e .
 
 ```shell
 streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py \
-  /root/model/Llama-3-8B-Instruct
+  ~/model/Meta-Llama-3-8B-Instruct
 ```
 
 ![image](https://github.com/SmartFlowAI/Llama3-XTuner-CN/assets/25839884/30ab70ea-9e60-4fed-a685-b3b3edbce7e6)
