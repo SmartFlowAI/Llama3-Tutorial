@@ -56,6 +56,7 @@ pip install -e .
 pip install -r requirements.txt
 pip install protobuf
 export MKL_SERVICE_FORCE_INTEL=1
+export MKL_THREADING_LAYER=GNU
 ```
 
 ### **📂 数据准备**
@@ -71,7 +72,7 @@ unzip OpenCompassData-core-20240207.zip
 #### 以 C-Eval_gen 为例：
 
 ```
-python run.py --datasets ceval_gen --hf-path /root/model/Meta-Llama-3-8B-Instruct/ tokenizer-path /root/model/Meta-Llama-3-8B-Instruct/ --tokenizer-kwargs padding_side='left' truncation='left' trust_remote_code=True --model-kwargs trust_remote_code=True device_map='auto' --max-seq-len 2048 --max-out-len 16 --batch-size 4 --num-gpus 1 --debug
+python run.py --datasets ceval_gen --hf-path /root/model/Meta-Llama-3-8B-Instruct --tokenizer-path /root/model/Meta-Llama-3-8B-Instruct --tokenizer-kwargs padding_side='left' truncation='left' trust_remote_code=True --model-kwargs trust_remote_code=True device_map='auto' --max-seq-len 1024 --max-out-len 16 --batch-size 2 --num-gpus 1 --debug
 ```
 
 **命令解析**
@@ -79,8 +80,8 @@ python run.py --datasets ceval_gen --hf-path /root/model/Meta-Llama-3-8B-Instruc
 ```
 python run.py \
 --datasets ceval_gen \
---hf-path /root/model/Meta-Llama-3-8B-Instruct/ \  # HuggingFace 模型路径
---tokenizer-path /root/model/Meta-Llama-3-8B-Instruct/ \  # HuggingFace tokenizer 路径（如果与模型路径相同，可以省略）
+--hf-path /root/model/Meta-Llama-3-8B-Instruct \  # HuggingFace 模型路径
+--tokenizer-path /root/model/Meta-Llama-3-8B-Instruct \  # HuggingFace tokenizer 路径（如果与模型路径相同，可以省略）
 --tokenizer-kwargs padding_side='left' truncation='left' trust_remote_code=True \  # 构建 tokenizer 的参数
 --model-kwargs device_map='auto' trust_remote_code=True \  # 构建模型的参数
 --max-seq-len 2048 \  # 模型可以接受的最大序列长度
