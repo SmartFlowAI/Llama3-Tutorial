@@ -21,7 +21,7 @@ conda create -n llama3 python=3.10
 conda activate llama3
 
 conda install git
-git-lfs install
+apt install git-lfs
 ```
 
 ### **✨ 下载 Llama3 模型**
