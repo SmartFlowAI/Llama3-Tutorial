@@ -69,10 +69,28 @@ unzip OpenCompassData-core-20240207.zip
 
 ### **🏗️** 命令行快速评测
 
+#### 查看配置文件和支持的数据集名称
+OpenCompass 预定义了许多模型和数据集的配置，你可以通过 工具 列出所有可用的模型和数据集配置。
+
+```
+# 列出所有配置
+# python tools/list_configs.py
+# 列出所有跟 llama (模型)及 mmlu（数据集） 相关的配置
+python tools/list_configs.py llama ceval
+
+```
+
 #### 以 C-Eval_gen 为例：
 
 ```
 python run.py --datasets ceval_gen --hf-path /root/model/Meta-Llama-3-8B-Instruct --tokenizer-path /root/model/Meta-Llama-3-8B-Instruct --tokenizer-kwargs padding_side='left' truncation='left' trust_remote_code=True --model-kwargs trust_remote_code=True device_map='auto' --max-seq-len 2048 --max-out-len 16 --batch-size 4 --num-gpus 1 --debug
+```
+
+**遇到 ModuleNotFoundError: No module named 'rouge' 错误请运行：**
+```
+git clone https://github.com/pltrdy/rouge
+cd rouge
+python setup.py install
 ```
 
 **命令解析**
