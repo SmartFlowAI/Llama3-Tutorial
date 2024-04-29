@@ -17,7 +17,7 @@ conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=
 conda install git-lfs
 git-lfs install
 ```
-下载模型
+下载模型 （InternStudio 中不建议执行这一步）
 ```shell
 mkdir -p ~/model
 cd ~/model
