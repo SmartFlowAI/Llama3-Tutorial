@@ -75,7 +75,7 @@ OpenCompass 预定义了许多模型和数据集的配置，你可以通过 工�
 ```
 # 列出所有配置
 # python tools/list_configs.py
-# 列出所有跟 llama (模型)及 mmlu（数据集） 相关的配置
+# 列出所有跟 llama (模型)及 ceval（数据集） 相关的配置
 python tools/list_configs.py llama ceval
 
 ```
