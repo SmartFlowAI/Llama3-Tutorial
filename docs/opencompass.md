@@ -194,8 +194,8 @@ models = [
     dict(
     type=HuggingFaceCausalLM,
     abbr='Llama3_8b', # 运行完结果展示的名称
-    path="/root/model/meta-llama/Meta-Llama-3-8B",  # 模型路径
-    tokenizer_path='/root/model/meta-llama/Meta-Llama-3-8B', # 分词器路径
+    path="/root/model/Meta-Llama-3-8B-Instruct",  # 模型路径
+    tokenizer_path='/root/model/Meta-Llama-3-8B-Instruct', # 分词器路径
     model_kwargs=dict(
         device_map='auto',
         trust_remote_code=True
