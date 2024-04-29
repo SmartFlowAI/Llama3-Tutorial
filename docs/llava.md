@@ -22,6 +22,13 @@ cd XTuner
 pip install -e .
 ```
 
+最后我们 clone 本教程仓库。
+
+```bash
+cd ~
+git clone https://github.com/SmartFlowAI/Llama3-Tutorial
+```
+
 ### 模型准备
 
 #### 准备 Llama3 权重
@@ -99,23 +106,19 @@ python ~/tutorial/xtuner/llava/llava_data/repeat.py \
 我们使用如下指令以启动训练：
 
 ```bash
-cd ~
-git clone https://github.com/SmartFlowAI/Llama3-XTuner-CN
-mkdir -p ~/project/llama3-ft
-cd ~/project/llama3-ft
-xtuner train ~/Llama3-XTuner-CN/configs/llava_llama3_8b_instruct_qlora_clip_vit_large_p14_336_lora_e1_finetune.py --work_dir ~/project/llama3-ft/llava --deepspeed deepspeed_zero2
+xtuner train ~/Llama3-Tutorial/configs/llava_llama3_8b_instruct_qlora_clip_vit_large_p14_336_lora_e1_finetune.py --work_dir ~/llama3_llava_pth --deepspeed deepspeed_zero2
 ```
 
-训练过程所需显存约为44447 MiB，在单卡A100上训练所需时间为30分钟。
+训练过程所需显存约为44447 MiB，在单卡 A100 上训练所需时间为30分钟。
 
 在训练好之后，我们将原始 image projector 和 我们微调得到的 image projector 都转换为 HuggingFace 格式，为了下面的效果体验做准备。
 
 ```bash
-xtuner convert pth_to_hf ~/Llama3-XTuner-CN/configs/llava_llama3_8b_instruct_qlora_clip_vit_large_p14_336_lora_e1_finetune.py \
+xtuner convert pth_to_hf ~/Llama3-Tutorial/configs/llava_llama3_8b_instruct_qlora_clip_vit_large_p14_336_lora_e1_finetune.py \
   ~/llama3-llava-iter_2181.pth \
   ~/project/llama3-ft/llava/pretrain_iter_2181_hf
 
-xtuner convert pth_to_hf ~/Llama3-XTuner-CN/configs/llava_llama3_8b_instruct_qlora_clip_vit_large_p14_336_lora_e1_finetune.py \
+xtuner convert pth_to_hf ~/Llama3-Tutorial/configs/llava_llama3_8b_instruct_qlora_clip_vit_large_p14_336_lora_e1_finetune.py \
   ~/project/llama3-ft/llava/iter_1200.pth \
   ~/project/llama3-ft/llava/finetune_iter_1200_hf
 ```
