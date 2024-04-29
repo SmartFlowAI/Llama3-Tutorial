@@ -214,6 +214,7 @@ run_cfg=dict(num_gpus=1),
 )
 ]
 ```
+运行```python run.py configs/eval_llama3_8b_demo.py```
 
 评测完成后，将会看到：
 
