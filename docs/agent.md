@@ -108,6 +108,7 @@ Saving the dataset (1/1 shards): 100%|████████████| 3444
 我们使用如下指令以启动训练：
 
 ```bash
+export MKL_SERVICE_FORCE_INTEL=1
 NPROC_PER_NODE=1 xtuner train ~/Llama3-Tutorial/configs/llama3-agentflan/llama3_8b_instruct_qlora_agentflan_3e.py --work-dir ~/llama3_agent_pth
 ```
 
@@ -115,7 +116,7 @@ NPROC_PER_NODE=1 xtuner train ~/Llama3-Tutorial/configs/llama3-agentflan/llama3_
 
 ```bash
 # 转换权重
-xtuner convert pth_to_hf ~/Llama3-XTuner-CN/configs/llama3-agentflan/llama3_8b_instruct_qlora_agentflan_3e.py \
+xtuner convert pth_to_hf ~/Llama3-Tutorial/configs/llama3-agentflan/llama3_8b_instruct_qlora_agentflan_3e.py \
     ~/llama3_agent_pth/iter_18516.pth \
     ~/llama3_agent_pth/iter_18516_hf
 ```
@@ -127,7 +128,7 @@ xtuner convert pth_to_hf ~/Llama3-XTuner-CN/configs/llama3-agentflan/llama3_8b_i
 ```bash
 # 合并权重
 export MKL_SERVICE_FORCE_INTEL=1
-xtuner convert merge ~/Meta-Llama-3-8B-Instruct \
+xtuner convert merge /root/model/Meta-Llama-3-8B-Instruct \
     ~/llama3_agent_pth/iter_18516_hf \
     ~/llama3_agent_pth/merged
 ```
@@ -136,7 +137,7 @@ xtuner convert merge ~/Meta-Llama-3-8B-Instruct \
 
 ```bash
 export MKL_SERVICE_FORCE_INTEL=1
-xtuner convert merge ~/Meta-Llama-3-8B-Instruct \
+xtuner convert merge /root/model/Meta-Llama-3-8B-Instruct \
     /share/new_models/agent-flan/iter_2316_hf \
     ~/llama3_agent_pth/merged
 ```
@@ -164,3 +165,6 @@ pip install lagent
 ```bash
 streamlit run ~/Llama3-Tutorial/tools/agent_web_demo.py 微调前/后 LLaMA3 模型路径
 ```
+
+- 微调前 LLaMA3 路径：`/root/model/Meta-Llama-3-8B-Instruct`
+- 微调后 LLaMA3 路径：`/root/llama3_agent_pth/merged`
