@@ -108,7 +108,7 @@ Saving the dataset (1/1 shards): 100%|████████████| 3444
 我们使用如下指令以启动训练：
 
 ```bash
-xtuner train ~/Llama3-Tutorial/configs/llama3-agentflan/llama3_8b_instruct_qlora_agentflan_3e.py --work-dir ~/llama3_agent_pth
+NPROC_PER_NODE=1 xtuner train ~/Llama3-Tutorial/configs/llama3-agentflan/llama3_8b_instruct_qlora_agentflan_3e.py --work-dir ~/llama3_agent_pth
 ```
 
 在训练完成后，我们将权重转换为 HuggingFace 格式，并合并到原权重中。
