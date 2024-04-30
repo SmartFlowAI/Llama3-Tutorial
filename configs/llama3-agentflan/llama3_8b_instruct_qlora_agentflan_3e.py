@@ -25,7 +25,7 @@ from xtuner.utils import PROMPT_TEMPLATE
 #######################################################################
 # Model
 pretrained_model_name_or_path = '/root/model/Meta-Llama-3-8B-Instruct'
-use_varlen_attn = True
+use_varlen_attn = False
 
 # Data
 agent_flan_path = '~/Agent-FLAN/data_converted'
