@@ -24,7 +24,7 @@ from xtuner.utils import PROMPT_TEMPLATE
 #                          PART 1  Settings                           #
 #######################################################################
 # Model
-pretrained_model_name_or_path = '~/Meta-Llama-3-8B-Instruct'
+pretrained_model_name_or_path = '/root/model/Meta-Llama-3-8B-Instruct'
 use_varlen_attn = True
 
 # Data
