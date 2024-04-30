@@ -19,7 +19,7 @@ conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=
 cd ~
 git clone -b v0.1.18 https://github.com/InternLM/XTuner
 cd XTuner
-pip install -e .
+pip install -e .[all]
 ```
 
 如果在前面的课程中已经配置好了环境，在这里也可以选择直接执行 `conda activate llama3` 以进入环境。
