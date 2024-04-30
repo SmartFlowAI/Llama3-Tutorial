@@ -11,8 +11,8 @@ Lagent Web Demo 部分详见 [Lagent Web Demo](#4-lagent-web-demo)。
 
 ## 2. 微调过程
 
-接下来我们带大家使用 XTuner 在 Agent-Flan 数据集上微调 Llama3-8B-Instruct，以让 Llama3-8B-Instruct 模型获得智能体能力。
-Agent-Flan 数据集是上海人工智能实验室 InternLM 团队所推出的一个智能体微调数据集，其通过将原始的智能体微调数据以多轮对话的方式进行分解，对数据进行能力分解并平衡，以及加入负样本等方式构建了高效的智能体微调数据集，从而可以大幅提升模型的智能体能力。
+接下来我们带大家使用 XTuner 在 Agent-FLAN 数据集上微调 Llama3-8B-Instruct，以让 Llama3-8B-Instruct 模型获得智能体能力。
+Agent-FLAN 数据集是上海人工智能实验室 InternLM 团队所推出的一个智能体微调数据集，其通过将原始的智能体微调数据以多轮对话的方式进行分解，对数据进行能力分解并平衡，以及加入负样本等方式构建了高效的智能体微调数据集，从而可以大幅提升模型的智能体能力。
 
 ### 2.1 环境配置
 
@@ -137,7 +137,7 @@ xtuner convert merge ~/Meta-Llama-3-8B-Instruct \
     ~/llama3_agent_pth/merged
 ```
 
-## 3. Llama3+AgentFLAN ReAct Demo
+## 3. Llama3+Agent-FLAN ReAct Demo
 
 在合并权重后，我们再次使用 Web Demo 体验一下它的智能体能力吧~
 
