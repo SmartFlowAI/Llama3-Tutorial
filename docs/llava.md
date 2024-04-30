@@ -141,6 +141,7 @@ xtuner convert pth_to_hf ~/Llama3-Tutorial/configs/llama3-llava/llava_llama3_8b_
 #### Pretrain 模型
 
 ```bash
+export MKL_SERVICE_FORCE_INTEL=1
 xtuner chat /root/model/Meta-Llama-3-8B-Instruct \
   --visual-encoder /root/model/clip-vit-large-patch14-336 \
   --llava /root/llama3_llava_pth/pretrain_iter_2181_hf \
@@ -155,6 +156,7 @@ xtuner chat /root/model/Meta-Llama-3-8B-Instruct \
 #### Finetune 后 模型
 
 ```bash
+export MKL_SERVICE_FORCE_INTEL=1
 xtuner chat /root/model/Meta-Llama-3-8B-Instruct \
   --visual-encoder /root/model/clip-vit-large-patch14-336 \
   --llava /root/llama3_llava_pth/iter_1200_hf \
