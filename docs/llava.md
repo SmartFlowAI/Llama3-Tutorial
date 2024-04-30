@@ -22,6 +22,8 @@ cd XTuner
 pip install -e .
 ```
 
+如果在前面的课程中已经配置好了环境，在这里也可以选择直接执行 `conda activate llama3` 以进入环境。
+
 最后我们 clone 本教程仓库。
 
 ```bash
@@ -38,7 +40,8 @@ git clone https://github.com/SmartFlowAI/Llama3-Tutorial
 - InternStudio
 
 ```bash
-cd ~
+mkdir -p ~/model
+cd ~/model
 ln -s /root/new_models/meta-llama/Meta-Llama-3-8B-Instruct .
 ```
 - 非 InternStudio
@@ -46,7 +49,8 @@ ln -s /root/new_models/meta-llama/Meta-Llama-3-8B-Instruct .
 我们选择从 OpenXLab 上下载 Meta-Llama-3-8B-Instruct 的权重。
 
 ```bash
-cd ~
+mkdir -p ~/model
+cd ~/model
 git lfs install
 git clone https://code.openxlab.org.cn/MrCat/Llama-3-8B-Instruct.git Meta-Llama-3-8B-Instruct
 ```
@@ -58,7 +62,8 @@ git clone https://code.openxlab.org.cn/MrCat/Llama-3-8B-Instruct.git Meta-Llama-
 - InternStudio
   
 ```bash
-cd ~
+mkdir -p ~/model
+cd ~/model
 ln -s /root/new_models/openai/clip-vit-large-patch14-336 .
 ```
 
@@ -74,7 +79,8 @@ ln -s /root/new_models/openai/clip-vit-large-patch14-336 .
 - InternStudio
 
 ```bash
-cd ~
+mkdir -p ~/model
+cd ~/model
 ln -s /root/new_models/xtuner/llama3-llava-iter_2181.pth .
 ```
 
@@ -115,12 +121,12 @@ xtuner train ~/Llama3-Tutorial/configs/llava_llama3_8b_instruct_qlora_clip_vit_l
 
 ```bash
 xtuner convert pth_to_hf ~/Llama3-Tutorial/configs/llava_llama3_8b_instruct_qlora_clip_vit_large_p14_336_lora_e1_finetune.py \
-  ~/llama3-llava-iter_2181.pth \
-  ~/project/llama3-ft/llava/pretrain_iter_2181_hf
+  ~/model/llama3-llava-iter_2181.pth \
+  ~/llama3_llava_pth/pretrain_iter_2181_hf
 
 xtuner convert pth_to_hf ~/Llama3-Tutorial/configs/llava_llama3_8b_instruct_qlora_clip_vit_large_p14_336_lora_e1_finetune.py \
-  ~/project/llama3-ft/llava/iter_1200.pth \
-  ~/project/llama3-ft/llava/finetune_iter_1200_hf
+  ~/llama3_llava_pth/iter_1200.pth \
+  ~/llama3_llava_pth/iter_1200_hf
 ```
 
 ### 效果体验
@@ -135,11 +141,11 @@ xtuner convert pth_to_hf ~/Llama3-Tutorial/configs/llava_llama3_8b_instruct_qlor
 #### Pretrain 模型
 
 ```bash
-xtuner chat ~/Meta-Llama-3-8B-Instruct \
-  --visual-encoder ~/clip-vit-large-patch14-336 \
-  --llava ~/project/llama3-ft/llava/pretrain_iter_2181_hf \
+xtuner chat /root/model/Meta-Llama-3-8B-Instruct \
+  --visual-encoder /root/model/clip-vit-large-patch14-336 \
+  --llava /root/llama3_llava_pth/pretrain_iter_2181_hf \
   --prompt-template llama3_chat \
-  --image ~/tutorial/xtuner/llava/llava_data/test_img/oph.jpg
+  --image /root/tutorial/xtuner/llava/llava_data/test_img/oph.jpg
 ```
 
 ![image](https://github.com/SmartFlowAI/Llama3-XTuner-CN/assets/75657629/0ddd6ed1-97d2-46e6-b580-5d6425a15604)
@@ -149,11 +155,11 @@ xtuner chat ~/Meta-Llama-3-8B-Instruct \
 #### Finetune 后 模型
 
 ```bash
-xtuner chat ~/Meta-Llama-3-8B-Instruct \
-  --visual-encoder ~/clip-vit-large-patch14-336 \
-  --llava ~/project/llama3-ft/llava/finetune_iter_1200_hf \
+xtuner chat /root/model/Meta-Llama-3-8B-Instruct \
+  --visual-encoder /root/model/clip-vit-large-patch14-336 \
+  --llava /root/llama3_llava_pth/iter_1200_hf \
   --prompt-template llama3_chat \
-  --image ~/tutorial/xtuner/llava/llava_data/test_img/oph.jpg
+  --image /root/tutorial/xtuner/llava/llava_data/test_img/oph.jpg
 ```
 
 ![image](https://github.com/SmartFlowAI/Llama3-XTuner-CN/assets/75657629/a8f0f0be-7210-4ecb-9584-0f02c2335246)
