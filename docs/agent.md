@@ -63,7 +63,7 @@ git clone https://code.openxlab.org.cn/MrCat/Llama-3-8B-Instruct.git Meta-Llama-
 
 ### 2.3 数据集准备
 
-由于 HuggingFace 上的 Agent-Flan 数据集暂时无法被 XTuner 直接加载，因此我们首先要下载到本地，然后转换成 XTuner 直接可用的格式。
+由于 HuggingFace 上的 Agent-FLAN 数据集暂时无法被 XTuner 直接加载，因此我们首先要下载到本地，然后转换成 XTuner 直接可用的格式。
 
 - InternStudio
 
@@ -71,8 +71,8 @@ git clone https://code.openxlab.org.cn/MrCat/Llama-3-8B-Instruct.git Meta-Llama-
 
 ```bash
 cd ~
-cp -r /root/share/new_models/internlm/Agent-Flan .
-chmod -R 755 Agent-Flan
+cp -r /root/share/new_models/internlm/Agent-FLAN .
+chmod -R 755 Agent-FLAN
 ```
 
 - 非 InternStudio
@@ -88,10 +88,10 @@ git clone https://huggingface.co/datasets/internlm/Agent-FLAN
 我们已经在 SmartFlowAI/Llama3-Tutorial 仓库中已经准备好了相关转换脚本。
 
 ```bash
-python ~/Llama3-Tutorial/tools/convert_agentflan.py ~/Agent-Flan/data
+python ~/Llama3-Tutorial/tools/convert_agentflan.py ~/Agent-FLAN/data
 ```
 
-在显示下面的内容后，就表示已经转换好了。转换好的数据位于 ~/Agent-Flan/data_converted
+在显示下面的内容后，就表示已经转换好了。转换好的数据位于 ~/Agent-FLAN/data_converted
 
 ```bash
 Saving the dataset (1/1 shards): 100%|████████████| 34442/34442
@@ -137,11 +137,11 @@ xtuner convert merge ~/Meta-Llama-3-8B-Instruct \
     ~/llama3_agent_pth/merged
 ```
 
-## 3. Llama3+AgentFlan ReAct Demo
+## 3. Llama3+AgentFLAN ReAct Demo
 
 在合并权重后，我们再次使用 Web Demo 体验一下它的智能体能力吧~
 
-可以看到，经过 Agent-Flan 数据集的微调后，Llama3-8B-Instruct 模型已经可以成功地调用工具了，其智能体能力有了很大的提升。
+可以看到，经过 Agent-FLAN 数据集的微调后，Llama3-8B-Instruct 模型已经可以成功地调用工具了，其智能体能力有了很大的提升。
 
 ![image](https://github.com/SmartFlowAI/Llama3-Tutorial/assets/75657629/19a3b644-56b3-4b38-99c8-c6133d29f119)
 
