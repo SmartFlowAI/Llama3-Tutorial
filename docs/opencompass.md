@@ -206,10 +206,11 @@ truncation_side='left',
 trust_remote_code=True,
 use_fast=False
 ),
-pad_token_id=128001,
+generation_kwargs={"eos_token_id": [128001, 128009]},
+batch_padding=True,
 max_out_len=100,
 max_seq_len=2048,
-batch_size=48,
+batch_size=16,
 run_cfg=dict(num_gpus=1),
 )
 ]
