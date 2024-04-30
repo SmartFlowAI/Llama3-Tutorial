@@ -30,7 +30,7 @@ conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=
 cd ~
 git clone -b v0.1.18 https://github.com/InternLM/XTuner
 cd XTuner
-pip install -e .
+pip install -e .[all]
 ```
 
 如果在前面的课程中已经配置好了环境，在这里也可以选择直接执行 `conda activate llama3` 以进入环境。
@@ -109,7 +109,7 @@ Saving the dataset (1/1 shards): 100%|████████████| 3444
 
 ```bash
 export MKL_SERVICE_FORCE_INTEL=1
-NPROC_PER_NODE=1 xtuner train ~/Llama3-Tutorial/configs/llama3-agentflan/llama3_8b_instruct_qlora_agentflan_3e.py --work-dir ~/llama3_agent_pth
+xtuner train ~/Llama3-Tutorial/configs/llama3-agentflan/llama3_8b_instruct_qlora_agentflan_3e.py --work-dir ~/llama3_agent_pth --deepspeed deepspeed_zero2
 ```
 
 在训练完成后，我们将权重转换为 HuggingFace 格式，并合并到原权重中。
