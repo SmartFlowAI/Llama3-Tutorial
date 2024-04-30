@@ -191,28 +191,27 @@ datasets = [*mmlu_datasets]
 from opencompass.models import HuggingFaceCausalLM
 
 models = [
-    dict(
-    type=HuggingFaceCausalLM,
-    abbr='Llama3_8b', # 运行完结果展示的名称
-    path="/root/model/Meta-Llama-3-8B-Instruct",  # 模型路径
-    tokenizer_path='/root/model/Meta-Llama-3-8B-Instruct', # 分词器路径
-    model_kwargs=dict(
-        device_map='auto',
-        trust_remote_code=True
-    ),
-    tokenizer_kwargs=dict(
-        padding_side='left',
-        truncation_side='left',
-        trust_remote_code=True,
-        use_fast=False
-    ),
-    generation_kwargs={"eos_token_id": [128001, 128009]},
-    batch_padding=True,
-    max_out_len=100,
-    max_seq_len=2048,
-    batch_size=8,
-    run_cfg=dict(num_gpus=1, num_procs=1),
-    )
+dict(
+type=HuggingFaceCausalLM,
+abbr='Llama3_8b', # 运行完结果展示的名称
+path='/root/model/Meta-Llama-3-8B-Instruct', # 模型路径
+tokenizer_path='/root/model/Meta-Llama-3-8B-Instruct', # 分词器路径
+model_kwargs=dict(
+device_map='auto',
+trust_remote_code=True
+),
+tokenizer_kwargs=dict(
+padding_side='left',
+truncation_side='left',
+trust_remote_code=True,
+use_fast=False
+),
+pad_token_id=128001,
+max_out_len=100,
+max_seq_len=2048,
+batch_size=48,
+run_cfg=dict(num_gpus=1),
+)
 ]
 ```
 
