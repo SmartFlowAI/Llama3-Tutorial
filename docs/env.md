@@ -1,8 +1,11 @@
 # 环节配置 Tips
 
+
+## VSCode 远程连接 InternStudio 开发机
+
 这一部分，为没有使用过 vscode 进行开发的小伙伴准备的，让大家快速上手 vscode ，并且配置好远程连接开发机的环境，减少大家在后续课程中的出现运行服务的错误。
 
-## 安装 vscode
+### 安装 vscode
 
 首先打开[vscode](https://code.visualstudio.com/Download)下载界面，点击 System Installer x64 的安装包下载。
 > 根据自身电脑系统选择对应的安装包，如果你是 Mac 用户，请下载 Mac 版本，如果是 Linux 用户请点击下载对应的 deb 安装包。
@@ -13,7 +16,7 @@
 
 ![image](https://github.com/acwwt/Llama3-Tutorial/assets/110531742/e0873f39-9cdb-437d-9345-40ad4e5f2413)
 
-## 安装 vscode 插件
+### 安装 vscode 插件
 
 安装完 vscode 之后，打开 vscode 并点击左侧的扩展按钮，搜索并安装如下插件：
 
@@ -26,7 +29,7 @@
 - Remote - SSH: Editing Configurat
 - Remote Explorer
 
-## 配置 vscode 远程连接开发机
+### 配置 vscode 远程连接开发机
 
 安装完插件之后，我们来到[InternStudio](https://studio.intern-ai.org.cn/)，创建开发机，然后我们启动开发机，点击 SSH 连接。
 
