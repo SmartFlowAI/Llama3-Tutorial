@@ -42,7 +42,7 @@ git clone https://github.com/SmartFlowAI/Llama3-Tutorial
 ```bash
 mkdir -p ~/model
 cd ~/model
-ln -s /root/new_models/meta-llama/Meta-Llama-3-8B-Instruct .
+ln -s /root/share/new_models/meta-llama/Meta-Llama-3-8B-Instruct .
 ```
 - 非 InternStudio
 
@@ -64,7 +64,7 @@ git clone https://code.openxlab.org.cn/MrCat/Llama-3-8B-Instruct.git Meta-Llama-
 ```bash
 mkdir -p ~/model
 cd ~/model
-ln -s /root/new_models/openai/clip-vit-large-patch14-336 .
+ln -s /root/share/new_models/openai/clip-vit-large-patch14-336 .
 ```
 
 - 非 InternStudio
@@ -81,7 +81,7 @@ ln -s /root/new_models/openai/clip-vit-large-patch14-336 .
 ```bash
 mkdir -p ~/model
 cd ~/model
-ln -s /root/new_models/xtuner/llama3-llava-iter_2181.pth .
+ln -s /root/share/new_models/xtuner/llama3-llava-iter_2181.pth .
 ```
 
 - 非 InternStudio
