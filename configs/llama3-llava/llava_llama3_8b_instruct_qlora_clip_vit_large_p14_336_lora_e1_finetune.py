@@ -22,10 +22,10 @@ from xtuner.utils import PROMPT_TEMPLATE
 #                          PART 1  Settings                           #
 #######################################################################
 # Model
-llm_name_or_path = '~/model/Meta-Llama-3-8B-Instruct'
-visual_encoder_name_or_path = '~/model/clip-vit-large-patch14-336'
+llm_name_or_path = '/root/model/Meta-Llama-3-8B-Instruct'
+visual_encoder_name_or_path = '/root/model/clip-vit-large-patch14-336'
 # Specify the pretrained pth
-pretrained_pth = '~/model/llama3-llava-iter_2181.pth'  # noqa: E501
+pretrained_pth = '/root/model/llama3-llava-iter_2181.pth'  # noqa: E501
 
 # Data
 data_root = '/root/tutorial/xtuner/llava/llava_data/'
