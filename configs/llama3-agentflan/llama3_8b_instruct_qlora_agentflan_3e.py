@@ -30,7 +30,7 @@ use_varlen_attn = False
 # Data
 agent_flan_path = '~/Agent-FLAN/data_converted'
 prompt_template = PROMPT_TEMPLATE.llama3_chat
-max_length = 8192
+max_length = 4096
 pack_to_max_length = True
 
 # parallel
