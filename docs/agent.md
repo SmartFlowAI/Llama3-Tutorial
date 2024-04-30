@@ -33,6 +33,8 @@ cd XTuner
 pip install -e .
 ```
 
+如果在前面的课程中已经配置好了环境，在这里也可以选择直接执行 `conda activate llama3` 以进入环境。
+
 最后，我们 clone 本教程仓库。
 
 ```bash
@@ -47,7 +49,8 @@ git clone https://github.com/SmartFlowAI/Llama3-Tutorial
 - InternStudio
 
 ```bash
-cd ~
+mkdir -p ~/model
+cd ~/model
 ln -s /root/share/new_models/meta-llama/Meta-Llama-3-8B-Instruct .
 ```
 
@@ -56,7 +59,8 @@ ln -s /root/share/new_models/meta-llama/Meta-Llama-3-8B-Instruct .
 我们选择从 OpenXLab 上下载 Meta-Llama-3-8B-Instruct 的权重。
 
 ```bash
-cd ~
+mkdir -p ~/model
+cd ~/model
 git lfs install
 git clone https://code.openxlab.org.cn/MrCat/Llama-3-8B-Instruct.git Meta-Llama-3-8B-Instruct
 ```
