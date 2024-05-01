@@ -10,19 +10,30 @@ conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=
 
 ## 下载模型
 
+新建文件夹
+
+```shell
+mkdir -p ~/model
+cd ~/model
+```
+<details>
+  <summary style="font-weight: bold; font-size: larger;">从OpenXLab中获取权重（开发机中不需要使用此步）</summary>
 
 安装 git-lfs 依赖
 
 ```shell
-apt install git git-lfs -y
+# 如果下面命令报错则使用 apt install git git-lfs -y
+conda install git-lfs
 git-lfs install
 ```
 下载模型 （InternStudio 中不建议执行这一步）
 ```shell
-mkdir -p ~/model
-cd ~/model
+
 git clone https://code.openxlab.org.cn/MrCat/Llama-3-8B-Instruct.git Meta-Llama-3-8B-Instruct
 ```
+
+</details>
+
 或者软链接 InternStudio 中的模型
 
 ```shell
