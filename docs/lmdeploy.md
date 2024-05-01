@@ -33,21 +33,33 @@ pip install -U lmdeploy[all]
 
 ### 1.2 Llama3 的下载
 
-安装 git-lfs 依赖
-```shell
-conda install git
-git-lfs install
-```
-下载模型
+新建文件夹
+
 ```shell
 mkdir -p ~/model
 cd ~/model
+```
+<details>
+  <summary style="font-weight: bold; font-size: larger;">从OpenXLab中获取权重（开发机中不需要使用此步）</summary>
+
+安装 git-lfs 依赖
+
+```shell
+# 如果下面命令报错则使用 apt install git git-lfs -y
+conda install git-lfs
+git-lfs install
+```
+下载模型 （InternStudio 中不建议执行这一步）
+```shell
+
 git clone https://code.openxlab.org.cn/MrCat/Llama-3-8B-Instruct.git Meta-Llama-3-8B-Instruct
 ```
 
+</details>
+
 或者软链接 InternStudio 中的模型
+
 ```shell
-mkdir -p ~/model
 ln -s /root/share/new_models/meta-llama/Meta-Llama-3-8B-Instruct ~/model/Meta-Llama-3-8B-Instruct
 ```
 
