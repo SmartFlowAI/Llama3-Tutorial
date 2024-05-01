@@ -3,22 +3,22 @@
 
 ## VSCode 远程连接 InternStudio 开发机
 
-这一部分，为没有使用过 vscode 进行开发的小伙伴准备的，让大家快速上手 vscode ，并且配置好远程连接开发机的环境，减少大家在后续课程中的出现运行服务的错误。
+这一部分，为没有使用过 VSCode 进行开发的小伙伴准备的，让大家快速上手 VSCode ，并且教大家如何创建开发机以及，使用 VSCode 配置好远程连接开发机的环境，减少大家在后续课程中的出现运行服务的错误。
 
-### 一、安装 vscode
+### 一、安装 VSCode
 
-首先打开[vscode](https://code.visualstudio.com/Download)下载界面，点击 System Installer x64 的安装包下载。
+首先打开[VSCode](https://code.visualstudio.com/Download)下载界面，点击 System Installer x64 的安装包下载。
 > 根据自身电脑系统选择对应的安装包，如果你是 Mac 用户，请下载 Mac 版本，如果是 Linux 用户请点击下载对应的 deb 安装包。
 
 ![image](https://github.com/acwwt/Llama3-Tutorial/assets/110531742/4238a53f-4497-47bd-a447-ebc37cbd22ab)
 
-下载完成以后，找到下载好的安装程序，双击运行，安装完成以后，打开 vscode 。
+下载完成以后，找到下载好的安装程序，双击运行，安装完成以后，打开 VSCode 。
 
 ![image](https://github.com/acwwt/Llama3-Tutorial/assets/110531742/e0873f39-9cdb-437d-9345-40ad4e5f2413)
 
-### 安装 vscode 插件
+### 安装 VSCode 插件
 
-安装完 vscode 之后，打开 vscode 并点击左侧的扩展按钮，搜索并安装如下插件：
+安装完 VSCode 之后，打开 VSCode 并点击左侧的扩展按钮，搜索并安装如下插件：
 
 - Remote SSH
 
@@ -29,13 +29,18 @@
 - Remote - SSH: Editing Configurat
 - Remote Explorer
 
-### 二、配置 vscode 远程连接开发机
+### 二、配置 VSCode 远程连接开发机
 
 安装完插件之后，我们来到[InternStudio](https://studio.intern-ai.org.cn/)，可以看到以下界面，然后我们点击"创建开发机"，
 
+![PixPin_2024-05-01_15-49-16](https://github.com/SmartFlowAI/Llama3-Tutorial/assets/110531742/93916a4b-725c-48fc-a75c-bedac9de26d2)
+
+接着我们配置开发机的名称，镜像以及GPU资源，
+
+![image](https://github.com/SmartFlowAI/Llama3-Tutorial/assets/110531742/8a57ce7d-81f6-4257-9d71-334487da183a)
 
 
-然后我们启动开发机，点击 SSH 连接。
+完成开发机创建以后，我们启动开发机，点击 SSH 连接。
 
 ![image](https://github.com/acwwt/Llama3-Tutorial/assets/110531742/10637a92-5847-4ed9-a573-100469db7b3b)
 
@@ -43,7 +48,7 @@
 
 ![image](https://github.com/acwwt/Llama3-Tutorial/assets/110531742/a4f6a788-949b-45a3-b82d-8e0aaaa8dcd9)
 
-然后回到 vscode 点击左侧的远程按钮，点击 SSH 的 + 号，在弹出的窗口中输入开发机的登录命令。
+然后回到 VSCode 点击左侧的远程按钮，点击 SSH 的 + 号，在弹出的窗口中输入开发机的登录命令。
 
 ![image](https://github.com/acwwt/Llama3-Tutorial/assets/110531742/430f87b6-f66d-4048-b320-3c218d0848f0)
 
@@ -55,12 +60,12 @@
 
 ![image](https://github.com/acwwt/Llama3-Tutorial/assets/110531742/106b906f-9517-4325-887b-dd773d9964b6)
 
-### 三、配置 vscode 端口映射
+### 三、配置 VSCode 端口映射
 
 下面会介绍两种端口映射的方法：
 
 #### 方法一：
-我们可以使用 `Ctrl + Shift + ~` 快捷键打开 vscode 终端，然后点击右边的 Ports 界面，接着点击 Foward a Port 按钮。
+我们可以使用 `Ctrl + Shift + ~` 快捷键打开 VSCode 终端，然后点击右边的 Ports 界面，接着点击 Foward a Port 按钮。
 
 ![image](https://github.com/acwwt/Llama3-Tutorial/assets/110531742/9ab25bae-273a-4d42-859f-77ad83d7ca24)
 
@@ -70,7 +75,7 @@
 
 其中第一个 port 是映射在本机的端口，后面的Fowarded Address 是开发机的IP地址和端口。也就是将开发机的 6006 端口映射在了本机的 6006 这个端口，当然本机的端口是可以更改的。
 
-但我们运行 streamlit 或者是 gradio 应用的时候，vscode 会自动的帮我们进行端口映射，并不需要我们手动操作，所以我们介绍另一种端口映射方法，也是最常用的。
+但我们运行 streamlit 或者是 gradio 应用的时候，VSCode 会自动的帮我们进行端口映射，并不需要我们手动操作，所以我们介绍另一种端口映射方法，也是最常用的。
 
 #### 方法二：
 
@@ -115,4 +120,3 @@ ssh -p 45980 root@ssh.intern-ai.org.cn -CNg -L 7860:127.0.0.1:7860 -o StrictHost
 ![image](https://github.com/acwwt/Llama3-Tutorial/assets/110531742/3b8ca544-6c09-4239-b9b1-bdd110e33955)
 
 如果出现如上图所示的情况，就说明已经成功进行了端口映射，它不输出任何信息是正常的，因为端口映射服务正在运行，接下来大家就可以快乐的进行课程实践了。
-
