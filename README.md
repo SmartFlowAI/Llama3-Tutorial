@@ -13,7 +13,7 @@
 
 | 课程   | 内容                                        | 资料                                |
 | ------ | ------------------------------------------- | ----------------------------------- |
-| 前置知识 | VScode远程连接开发机                        |  [环境配置 Tips](./docs/env.md)，[视频](https://www.bilibili.com/video/BV1Qi42117mb) |
+| 前置知识 | VScode 远程连接开发机                        |  [文档](./docs/env.md)，[视频](https://www.bilibili.com/video/BV1Qi42117mb) |
 | 第一节 | Llama 3 本地 Web Demo 部署                  | [文档](./docs/hello_world.md)，[视频](https://www.bilibili.com/video/BV1Fu4m1F7FA) |
 | 第二节 | Llama 3 微调个人小助手认知（[XTuner](https://github.com/internLM/xtuner) 版）     | [文档](./docs/assistant.md)，[视频](https://www.bilibili.com/video/BV1Em41117RD)   |
 | 第三节 | Llama 3 图片理解能力微调（[XTuner](https://github.com/internLM/xtuner)+LLaVA 版） | [文档](./docs/llava.md)，[视频](https://www.bilibili.com/video/BV15f421S7cg)       |
