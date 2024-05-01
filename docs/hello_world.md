@@ -44,7 +44,7 @@ ln -s /root/share/new_models/meta-llama/Meta-Llama-3-8B-Instruct ~/model/Meta-Ll
 
 ```shell
 cd ~
-git clone https://github.com/SmartFlowAI/Llama3-XTuner-CN
+git clone https://github.com/SmartFlowAI/Llama3-Tutorial
 ```
 
 安装 XTuner 时会自动安装其他依赖
@@ -62,4 +62,4 @@ streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py \
   ~/model/Meta-Llama-3-8B-Instruct
 ```
 
-![image](https://github.com/SmartFlowAI/Llama3-XTuner-CN/assets/25839884/30ab70ea-9e60-4fed-a685-b3b3edbce7e6)
+![image](https://github.com/SmartFlowAI/Llama3-Tutorial/assets/25839884/30ab70ea-9e60-4fed-a685-b3b3edbce7e6)
