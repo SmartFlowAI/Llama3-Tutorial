@@ -14,7 +14,7 @@ conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=
 安装 git-lfs 依赖
 
 ```shell
-conda install git-lfs
+apt install git git-lfs -y
 git-lfs install
 ```
 下载模型 （InternStudio 中不建议执行这一步）
