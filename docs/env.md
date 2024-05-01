@@ -5,7 +5,7 @@
 
 这一部分，为没有使用过 vscode 进行开发的小伙伴准备的，让大家快速上手 vscode ，并且配置好远程连接开发机的环境，减少大家在后续课程中的出现运行服务的错误。
 
-### 安装 vscode
+### 一、安装 vscode
 
 首先打开[vscode](https://code.visualstudio.com/Download)下载界面，点击 System Installer x64 的安装包下载。
 > 根据自身电脑系统选择对应的安装包，如果你是 Mac 用户，请下载 Mac 版本，如果是 Linux 用户请点击下载对应的 deb 安装包。
@@ -29,9 +29,13 @@
 - Remote - SSH: Editing Configurat
 - Remote Explorer
 
-### 配置 vscode 远程连接开发机
+### 二、配置 vscode 远程连接开发机
 
-安装完插件之后，我们来到[InternStudio](https://studio.intern-ai.org.cn/)，创建开发机，然后我们启动开发机，点击 SSH 连接。
+安装完插件之后，我们来到[InternStudio](https://studio.intern-ai.org.cn/)，可以看到以下界面，然后我们点击"创建开发机"，
+
+
+
+然后我们启动开发机，点击 SSH 连接。
 
 ![image](https://github.com/acwwt/Llama3-Tutorial/assets/110531742/10637a92-5847-4ed9-a573-100469db7b3b)
 
@@ -51,11 +55,11 @@
 
 ![image](https://github.com/acwwt/Llama3-Tutorial/assets/110531742/106b906f-9517-4325-887b-dd773d9964b6)
 
-## 配置 vscode 端口映射
+### 三、配置 vscode 端口映射
 
 下面会介绍两种端口映射的方法：
 
-### 方法一：
+#### 方法一：
 我们可以使用 `Ctrl + Shift + ~` 快捷键打开 vscode 终端，然后点击右边的 Ports 界面，接着点击 Foward a Port 按钮。
 
 ![image](https://github.com/acwwt/Llama3-Tutorial/assets/110531742/9ab25bae-273a-4d42-859f-77ad83d7ca24)
@@ -68,7 +72,7 @@
 
 但我们运行 streamlit 或者是 gradio 应用的时候，vscode 会自动的帮我们进行端口映射，并不需要我们手动操作，所以我们介绍另一种端口映射方法，也是最常用的。
 
-### 方法二：
+#### 方法二：
 
 我们打开本机的终端，我们使用 powershell，但是要确保你的本机是由 OpenSSH 服务的。
 
