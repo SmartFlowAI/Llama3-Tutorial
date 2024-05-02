@@ -72,7 +72,7 @@ lmdeploy chat /root/model/Meta-Llama-3-8B-Instruct
 ```
 
 运行结果是：
-![1713941173524](https://github.com/Shengshenlan/Llama3-XTuner-CN/assets/57640594/0c44b8c8-d01a-4d2c-9be9-b3237a46e016)
+![1713941173524](https://github.com/Shengshenlan/Llama3-Tutorial/assets/57640594/0c44b8c8-d01a-4d2c-9be9-b3237a46e016)
 
 
 ## 3. LMDeploy模型量化(lite) 
@@ -95,7 +95,7 @@ lmdeploy chat /root/model/Meta-Llama-3-8B-Instruct/
 nvidia-smi 
 ```
 
-![image](https://github.com/Shengshenlan/Llama3-XTuner-CN/assets/57640594/239b926c-335b-4390-8ce2-1ef23db47773)
+![image](https://github.com/Shengshenlan/Llama3-Tutorial/assets/57640594/239b926c-335b-4390-8ce2-1ef23db47773)
 
 此时模型的占用为33236M。下面，改变`--cache-max-entry-count`参数，设为0.5。
 
@@ -110,7 +110,7 @@ lmdeploy chat /root/model/Meta-Llama-3-8B-Instruct/ --cache-max-entry-count 0.5
 nvidia-smi 
 ```
 
-![image](https://github.com/Shengshenlan/Llama3-XTuner-CN/assets/57640594/f992dedd-f14f-4437-b824-41e9f9e1e3da)
+![image](https://github.com/Shengshenlan/Llama3-Tutorial/assets/57640594/f992dedd-f14f-4437-b824-41e9f9e1e3da)
 
 看到显存占用明显降低，变为26708M。
 
@@ -120,7 +120,7 @@ nvidia-smi
 lmdeploy chat /root/model/Meta-Llama-3-8B-Instruct/ --cache-max-entry-count 0.01
 ```
 
-![image](https://github.com/Shengshenlan/Llama3-XTuner-CN/assets/57640594/9237bf1d-f8a9-4dc5-b325-504fa5df3ad6)
+![image](https://github.com/Shengshenlan/Llama3-Tutorial/assets/57640594/9237bf1d-f8a9-4dc5-b325-504fa5df3ad6)
 
 然后与模型对话，可以看到，此时显存占用仅为16176M，代价是会降低模型推理速度。
 
@@ -183,7 +183,7 @@ lmdeploy serve api_server \
 通过运行以上指令，我们成功启动了API服务器，请勿关闭该窗口，后面我们要新建客户端连接该服务。
 你也可以直接打开http://{host}:23333查看接口的具体使用说明，如下图所示。
 
-![image](https://github.com/Shengshenlan/Llama3-XTuner-CN/assets/57640594/d4ef3e71-942b-4aa7-af7e-f1a47cc6ec37)
+![image](https://github.com/Shengshenlan/Llama3-Tutorial/assets/57640594/d4ef3e71-942b-4aa7-af7e-f1a47cc6ec37)
 
 
 意，这一步由于Server在远程服务器上，所以本地需要做一下ssh转发才能直接访问。在你本地打开一个cmd窗口，输入命令如下：
@@ -194,7 +194,7 @@ ssh -CNg -L 23333:127.0.0.1:23333 root@ssh.intern-ai.org.cn -p 你的ssh端口�
 
 ssh 端口号就是下面图片里的 39864，请替换为你自己的。
 
-![image](https://github.com/Shengshenlan/Llama3-XTuner-CN/assets/57640594/2a2a9905-1c5b-4cc7-8f11-df0f58ad45a3)
+![image](https://github.com/Shengshenlan/Llama3-Tutorial/assets/57640594/2a2a9905-1c5b-4cc7-8f11-df0f58ad45a3)
 
 然后打开浏览器，访问http://127.0.0.1:23333。
 

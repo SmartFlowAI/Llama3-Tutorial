@@ -28,7 +28,7 @@ pretrained_model_name_or_path = '/root/model/Meta-Llama-3-8B-Instruct'
 use_varlen_attn = False
 
 # Data
-data_files = ['/root/Llama3-XTuner-CN/data/personal_assistant.json']
+data_files = ['/root/Llama3-Tutorial/data/personal_assistant.json']
 prompt_template = PROMPT_TEMPLATE.llama3_chat
 max_length = 512
 pack_to_max_length = True
