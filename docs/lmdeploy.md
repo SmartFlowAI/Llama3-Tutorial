@@ -163,6 +163,13 @@ lmdeploy chat /root/model/Meta-Llama-3-8B-Instruct_4bit --model-format awq --cac
 4. 支持 volta 架构（sm70）及以上的所有显卡型号：V100、20系列、T4、30系列、40系列、A10、A100 等等
 通过 LMDeploy 应用 kv 量化非常简单，只需要设定 quant_policy 参数。LMDeploy 规定 qant_policy=4表示 kv int4 量化，quant_policy=8 表示 kv int8 量化。
 
+```shell
+lmdeploy chat \
+    /root/model/Meta-Llama-3-8B-Instruct \
+    --quant-policy 8 \
+    --cache-max-entry-count 0.01
+```
+
 ## 4. LMDeploy服务（serve）
 在前面的章节，我们都是在本地直接推理大模型，这种方式成为本地部署。在生产环境下，我们有时会将大模型封装为 API 接口服务，供客户端访问。
 
