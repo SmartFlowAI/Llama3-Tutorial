@@ -59,7 +59,7 @@ pip install -e .
 运行 web_demo.py
 
 ```shell
-streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py \
+streamlit run ~/Llama3-Tutorial/tools/internstudio_web_demo.py \
   ~/model/Meta-Llama-3-8B-Instruct
 ```
 
@@ -69,10 +69,10 @@ streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py \
 ## 自我认知训练数据集准备
 
 ```shell
-cd ~/Llama3-XTuner-CN
+cd ~/Llama3-Tutorial
 python tools/gdata.py 
 ```
-以上脚本在生成了 ~/Llama3-XTuner-CN/data/personal_assistant.json 数据文件格式如下所示：
+以上脚本在生成了 ~/Llama3-Tutorial/data/personal_assistant.json 数据文件格式如下所示：
 ```json
 [
     {
@@ -125,7 +125,7 @@ xtuner convert merge /root/model/Meta-Llama-3-8B-Instruct \
 ## 推理验证
 
 ```shell
-streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py \
+streamlit run ~/Llama3-Tutorial/tools/internstudio_web_demo.py \
   /root/llama3_hf_merged
 ```
 
