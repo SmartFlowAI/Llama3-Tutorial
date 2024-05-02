@@ -58,7 +58,7 @@ pip install -e .
 运行 web_demo.py
 
 ```shell
-streamlit run ~/Llama3-XTuner-CN/tools/internstudio_web_demo.py \
+streamlit run ~/Llama3-Tutorial/tools/internstudio_web_demo.py \
   ~/model/Meta-Llama-3-8B-Instruct
 ```
 
