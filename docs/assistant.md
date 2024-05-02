@@ -105,7 +105,7 @@ python tools/gdata.py
 
 
 ```Bash
-cd ~/Llama3-XTuner-CN
+cd ~/Llama3-Tutorial
 
 # 开始训练,使用 deepspeed 加速，A100 40G显存 耗时24分钟
 xtuner train configs/assistant/llama3_8b_instruct_qlora_assistant.py --work-dir /root/llama3_pth
