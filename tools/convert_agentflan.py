@@ -5,6 +5,8 @@ from datasets import Dataset
 
 
 file_path = sys.argv[1]  # /xxx/internlm/Agent-Flan/data
+if file_path.endswith('/'):
+    file_path = file_path[:-1]
 
 ds = []
 for file in os.listdir(file_path):
