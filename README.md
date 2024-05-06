@@ -13,13 +13,13 @@
 
 | 课程   | 内容                                        | 资料                                |
 | ------ | ------------------------------------------- | ----------------------------------- |
-| 前置知识 | VScode 远程连接开发机                        |  [文档](./docs/env.md)，[视频](https://www.bilibili.com/video/BV1Qi42117mb) |
-| 第一节 | Llama 3 本地 Web Demo 部署                  | [文档](./docs/hello_world.md)，[视频](https://www.bilibili.com/video/BV1Fu4m1F7FA) |
-| 第二节 | Llama 3 微调个人小助手认知（[XTuner](https://github.com/internLM/xtuner) 版）     | [文档](./docs/assistant.md)，[视频](https://www.bilibili.com/video/BV1Em41117RD)   |
-| 第三节 | Llama 3 图片理解能力微调（[XTuner](https://github.com/internLM/xtuner)+LLaVA 版） | [文档](./docs/llava.md)，[视频](https://www.bilibili.com/video/BV15f421S7cg)       |
-| 第四节 | Llama 3 高效部署实践（[LMDeploy](https://github.com/internLM/lmdeploy) 版）         | [文档](./docs/lmdeploy.md)，[视频](https://www.bilibili.com/video/BV1fx4y1B74B)                          |
-| 第五节 | Llama 3 Agent 能力体验与微调                | [文档](./docs/agent.md)，[视频](https://www.bilibili.com/video/BV1zi42117MP)       |
-| 第六节 | Llama 3 能力评测（[OpenCompass](https://github.com/open-compass/opencompass) 版）          | [文档](./docs/opencompass.md)，[视频](https://www.bilibili.com/video/BV19i42117yr)                          |
+| 前置知识 | VScode 远程连接开发机                        |  [文档](./docs/env.md)，[autodl文档](./docs_autodl/env.md)，[视频](https://www.bilibili.com/video/BV1Qi42117mb) |
+| 第一节 | Llama 3 本地 Web Demo 部署                  | [文档](./docs/hello_world.md)，[autodl文档](./docs_autodl/hello_world.md)，[视频](https://www.bilibili.com/video/BV1Fu4m1F7FA) |
+| 第二节 | Llama 3 微调个人小助手认知（[XTuner](https://github.com/internLM/xtuner) 版）     | [文档](./docs/assistant.md)，[autodl文档](./docs_autodl/assistant.md)，[视频](https://www.bilibili.com/video/BV1Em41117RD)   |
+| 第三节 | Llama 3 图片理解能力微调（[XTuner](https://github.com/internLM/xtuner)+LLaVA 版） | [文档](./docs/llava.md)，[autodl文档](./docs_autodl/llava.md)，[视频](https://www.bilibili.com/video/BV15f421S7cg)       |
+| 第四节 | Llama 3 高效部署实践（[LMDeploy](https://github.com/internLM/lmdeploy) 版）         | [文档](./docs/lmdeploy.md)，[autodl文档](./docs_autodl/lmdeploy.md)，[视频](https://www.bilibili.com/video/BV1fx4y1B74B)                          |
+| 第五节 | Llama 3 Agent 能力体验与微调                | [文档](./docs/agent.md)，[autodl文档](./docs_autodl/agent.md)，[视频](https://www.bilibili.com/video/BV1zi42117MP)       |
+| 第六节 | Llama 3 能力评测（[OpenCompass](https://github.com/open-compass/opencompass) 版）          | [文档](./docs/opencompass.md)，[autodl文档](./docs_autodl/opencompass.md)，[视频](https://www.bilibili.com/video/BV19i42117yr)                          |
 
 
 
