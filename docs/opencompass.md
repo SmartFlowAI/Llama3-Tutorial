@@ -14,15 +14,6 @@ https://github.com/SmartFlowAI/Llama3-Tutorial/
 
 本小节将带大家手把手用 opencompass 评测 Llama3 。
 
-### **🧭**环境配置
-
-```shell
-conda create -n llama3 python=3.10
-conda activate llama3
-
-conda install git
-apt install git-lfs
-```
 
 ### **✨ 下载 Llama3 模型**
 
