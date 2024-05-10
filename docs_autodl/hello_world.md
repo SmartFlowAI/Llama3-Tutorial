@@ -2,7 +2,7 @@
 
 ## 环境配置
 
-（如果使用datawahle镜像则无需配置如下内容）
+（如果使用datawhale镜像则无需配置如下内容）
 ```shell
 conda create -n llama3 python=3.10
 conda activate llama3
